@@ -6,6 +6,10 @@
   let { children } = $props();
 </script>
 
+<svelte:head>
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+</svelte:head>
+
 <Nav />
 
 <main class="min-h-[70vh]">
