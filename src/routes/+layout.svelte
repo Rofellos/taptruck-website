@@ -12,7 +12,7 @@
 
 <Nav />
 
-<main class="min-h-[70vh]">
+<main class="min-h-[70vh] bg-bg text-fg py-12 sm:py-14 md:py-16">
   {@render children()}
 </main>
 

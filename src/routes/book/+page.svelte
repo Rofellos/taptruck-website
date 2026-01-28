@@ -9,8 +9,8 @@
 </script>
 
 
-<div class="mx-auto max-w-3xl px-4 py-12">
-  <div class="mb-8">
+<div class="mx-auto max-w-6xl px-4">
+  <div class="space-y-10 md:space-y-12">
     <h1 class="text-4xl font-bold tracking-tight">Book the Tap Truck</h1>
     <p class="mt-2 text-gray-600">
       Tell us about your event and we’ll reply with availability and a quote.

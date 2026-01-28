@@ -1,3 +1,20 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base{
+    :root {
+        /* Main (60%) - dark */
+        --brand: 12 20 36;        /* rgb */
+        /* Accent (30%) - lighter */
+        --accent: 96 165 250;     /* rgb */
+        /* Pop (10%) - highlight */
+        --pop: 245 158 11;        /* rgb */
+
+        /* neutrals */
+        --bg: 255 255 255;
+        --fg: 15 23 42;
+    }
+}
+
+
