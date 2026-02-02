@@ -3,15 +3,17 @@
 export default {
   content: ['./src/**/*.{html,js,svelte,ts}'],
   theme: {
-    extend: {
-      colors: {
-        brand: 'rgb(var(--brand) / <alpha-value>)',
-        accent: 'rgb(var(--accent) / <alpha-value>)',
-        pop: 'rgb(var(--pop) / <alpha-value>)',
-        bg: 'rgb(var(--bg) / <alpha-value>)',
-        fg: 'rgb(var(--fg) / <alpha-value>)',
-      }
-    },
-  },
+  extend: {
+    colors: {
+      brand: {
+        primary: 'rgb(var(--brand-primary) / <alpha-value>)',
+        secondary: 'rgb(var(--brand-secondary) / <alpha-value>)',
+        accent: 'rgb(var(--brand-accent) / <alpha-value>)',
+      },
+      bg: 'rgb(var(--bg) / <alpha-value>)',
+      fg: 'rgb(var(--fg) / <alpha-value>)',
+    }
+  }
+},
   plugins: [],
 };

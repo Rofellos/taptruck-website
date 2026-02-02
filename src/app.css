@@ -2,19 +2,59 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base{
-    :root {
-        /* Main (60%) - dark */
-        --brand: 12 20 36;        /* rgb */
-        /* Accent (30%) - lighter */
-        --accent: 96 165 250;     /* rgb */
-        /* Pop (10%) - highlight */
-        --pop: 245 158 11;        /* rgb */
+/* ===============================
+   Base (tokens, globals)
+================================ */
+@layer base {
+  :root {
+    /* Brand colors */
+    --brand-primary: 74 74 74;      /* #4A4A4A */
+    --brand-secondary: 230 222 122; /* #E6DE7A */
+    --brand-accent: 150 106 11;     /* #966A0B */
 
-        /* neutrals */
-        --bg: 255 255 255;
-        --fg: 15 23 42;
-    }
+    /* Semantic tokens */
+    --bg: 255 255 255;
+    --fg: 34 34 34;
+  }
+
+  body {
+    background-color: rgb(var(--bg));
+    color: rgb(var(--fg));
+  }
 }
+
+/* ===============================
+   Components (buttons, cards)
+================================ */
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center rounded-xl
+           px-5 py-3 text-sm font-semibold
+           transition-colors duration-200
+           focus:outline-none focus:ring-2 focus:ring-offset-2;
+  }
+
+  .btn-primary {
+    @apply btn bg-[rgb(var(--brand-accent))] text-white
+           hover:opacity-90
+           focus:ring-[rgb(var(--brand-accent))];
+  }
+
+  .btn-secondary {
+    @apply btn bg-[rgb(var(--brand-secondary))]
+           text-[rgb(var(--brand-primary))]
+           hover:opacity-90
+           focus:ring-[rgb(var(--brand-secondary))];
+  }
+
+  .btn-outline {
+    @apply btn border border-[rgb(var(--brand-primary))]
+           text-[rgb(var(--brand-primary))]
+           hover:bg-[rgb(var(--brand-primary))]
+           hover:text-white
+           focus:ring-[rgb(var(--brand-primary))];
+  }
+}
+
 
 
