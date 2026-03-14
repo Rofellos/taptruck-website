@@ -1,3 +1,4 @@
+
 <!-- src/routes/+page.svelte -->
 <section class="relative w-full overflow-hidden">
   <!-- Background image -->

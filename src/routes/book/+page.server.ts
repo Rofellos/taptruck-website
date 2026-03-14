@@ -57,11 +57,11 @@ export const actions: Actions = {
     }
 
 
-const subject = `New Tap Truck inquiry – ${name} (${date})`;
+const subject = `New Tap Truck Inquiry – ${name} (${date})`;
 
 const html = `
   <div style="font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; line-height: 1.5;">
-    <h2 style="margin:0 0 12px;">New booking inquiry</h2>
+    <h2 style="margin:0 0 12px;">New Booking Inquiry</h2>
 
     <table style="border-collapse: collapse; width: 100%; max-width: 640px;">
       <tr><td style="padding:6px 0;"><strong>Name:</strong></td><td style="padding:6px 0;">${escapeHtml(name)}</td></tr>

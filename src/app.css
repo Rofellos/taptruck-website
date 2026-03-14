@@ -14,8 +14,8 @@
     --brand-accent: 150 106 11;     /* #966A0B */
 
     /* Dark theme defaults */
-    --bg: 10 10 10;               /* near-black */
-    --fg: 245 245 245;            /* near-white */
+    --bg: 246 244 239;               /* off white */
+    --fg: 34 34 34;            /* near-black */
     --muted: 160 160 160;         /* muted text */
     --surface: 22 22 22;          /* cards/panels */
     --border: 255 255 255;        /* used with low opacity in classes */
