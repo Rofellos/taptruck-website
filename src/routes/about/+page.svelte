@@ -85,7 +85,7 @@
         Founders
       </p>
       <h2 class="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">
-        Why I started Tap Truck VI
+        Why we started Tap Truck VI
       </h2>
 
       <div class="mt-6 space-y-5 text-base leading-8 text-fg/80">
@@ -103,13 +103,13 @@
 
         <p>
           We both love craft beer and have a real appreciation for the craft scene on the island.
-          That interest has shaped a lot of the vision for Tap Truck VI. I want the business to feel
+          That interest has shaped a lot of the vision for Tap Truck VI. We want the business to feel
           polished and professional, but also rooted in the community and the quality that makes
           local events and local makers stand out.
         </p>
 
         <p>
-          At the end of the day, I want Tap Truck VI to be something people remember not just
+          At the end of the day, we want Tap Truck VI to be something people remember not just
           because it looks great, but because it adds to the atmosphere of the event and helps make
           the whole experience feel special.
         </p>
