@@ -9,7 +9,7 @@
 </script>
 
 
-<div class="mx-auto max-w-6xl px-4">
+<div class="mx-auto max-w-6xl px-4 pt-44 pb-10 md:pt-44 md:pb-10">
   <div class="space-y-10 md:space-y-12">
     <h1 class="text-4xl font-bold tracking-tight">Book the Tap Truck</h1>
     <p class="mt-2 text-gray-600">
