@@ -40,7 +40,7 @@
 				href="/book"
 				class="nav-cta"
 			>
-				Inquire
+				Book
 			</a>
 		</div>
 	</div>

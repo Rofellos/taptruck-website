@@ -143,12 +143,12 @@
           Book now
         </a>
 
-        <a
+        <!-- <a
           href="/pricing"
           class="btn btn-outline w-full sm:w-auto"
         >
           View pricing
-        </a>
+        </a> -->
       </div>
     </div>
   </div>
