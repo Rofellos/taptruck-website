@@ -23,9 +23,9 @@
   }`}
 >
 	<div class="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-white/25 to-transparent"></div>
-	<div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
-		<a href="/" class="flex items-center gap-2 text-lg text-[rgb(var(--bg))] font-semibold tracking-tight hover:opacity-90">
-			<img src="/Tap OONN Truck Logo.png" class="h-12 w-auto invert sepia saturate-[600%] hue-rotate-[15deg] brightness-[105%" alt="Tap Truck logo">
+	<div class="mx-auto flex max-w-6xl items-center justify-between px-8 py-2">
+		<a href="/" class="flex items-center gap-2 text-lg text-white font-semibold tracking-tight hover:opacity-90">
+			<img src="/nav logo bw.svg" class="h-14 w-auto" alt="Tap Truck logo">
 		</a>
 
 		

@@ -9,6 +9,7 @@ import {
 } from '$env/static/private';
 import BookingInquiry from '$lib/emails/BookingInquiry';
 import { env } from '$env/dynamic/private';
+import { subscribeToMailerLite } from '$lib/server/mailerlite';
 
 const resend = new Resend(env.RESEND_API_KEY);
 
@@ -43,6 +44,8 @@ export const actions: Actions = {
     const location = String(data.get('location') ?? '').trim();
     const guests = String(data.get('guests') ?? '').trim();
     const details = String(data.get('details') ?? '').trim();
+
+    const newsletterOptIn = data.get('newsletterOptIn') === 'yes';
 
     const token = String(data.get('cf-turnstile-response') ?? '').trim();
     if (!token) return fail(400, { message: 'Please complete the CAPTCHA.' });
@@ -103,7 +106,13 @@ await resend.emails.send({
   html
 });
 
-
+if (newsletterOptIn) {
+  try {
+    await subscribeToMailerLite(email);
+  } catch (err) {
+    console.error('MailerLite subscribe failed:', err);
+  }
+}
     return { success: true };
   }
 };

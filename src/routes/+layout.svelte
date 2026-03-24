@@ -4,10 +4,28 @@
   import Footer from '$lib/components/Footer.svelte';
 
   let { children } = $props();
+
+  import { afterNavigate } from '$app/navigation';
+  import { browser } from '$app/environment';
+  let firstNavigation = true;
+
+  if (browser) {
+    afterNavigate(() => {
+      if (firstNavigation) {
+        firstNavigation = false;
+        return;
+      }
+
+      if (window.fbq) {
+        window.fbq('track', 'PageView');
+      }
+    });
+  }
 </script>
 
 <svelte:head>
-  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+  <!-- CLOUDFLARE TURNSTILE -->
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script> 
 </svelte:head>
 
 <Nav />

@@ -8,6 +8,11 @@ declare global {
 		// interface PageState {}
 		// interface Platform {}
 	}
+	
+	// META PIXEL WINDOW 
+	interface Window {
+ 		 fbq?: (...args: any[]) => void;
+	}
 }
 
 export {};

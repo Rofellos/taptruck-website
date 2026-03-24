@@ -9,13 +9,24 @@
 </script>
 
 
-<div class="mx-auto max-w-6xl px-4 pt-44 pb-10 md:pt-44 md:pb-10">
-  <div class="space-y-10 md:space-y-12">
-    <h1 class="text-4xl font-bold tracking-tight">Book the Tap Truck</h1>
-    <p class="mt-2 text-gray-600">
-      Tell us about your event and we’ll reply with availability and a quote.
-    </p>
+<div class="mx-auto max-w-6xl px-4 pt-24 pb-10 md:pt-24 md:pb-10">
+  <section class="bg-bg text-fg">
+  <div class="mx-auto max-w-7xl px-4 pt-16 pb-10 sm:px-6 sm:pt-20 sm:pb-12 lg:px-8 lg:pt-24 lg:pb-14">
+    <div class="mx-auto max-w-3xl text-center">
+      <p class="text-sm font-semibold uppercase tracking-[0.2em] text-[rgb(var(--brand-accent))]">
+        Book
+      </p>
+
+      <h1 class="mt-4 text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
+        Book the Tap Truck
+      </h1>
+
+      <p class="mt-6 text-base leading-7 text-fg/75 sm:text-lg">
+        Tell us about your event and we’ll get back to you with availability, details, and a quote.
+      </p>
+    </div>
   </div>
+</section>
 
   {#if $page.form?.success}
     <div class="rounded-2xl border p-6 shadow-sm">
@@ -105,13 +116,25 @@
           rows="5"
           required
           class="mt-1 w-full rounded-lg border px-3 py-2"
-          placeholder="Wedding / birthday / corporate… timing, venue notes, number of taps, etc."
+          placeholder="Wedding / birthday / corporate… timing, venue notes, beverage preferences, etc."
         />
       </div>
 
+      <!-- EMAIL SUBSCRIPTION CHECKBOX -->
+
+      <label class="flex items-start gap-3 text-sm text-fg/75">
+        <input
+          type="checkbox"
+          name="newsletterOptIn"
+          value="yes"
+          class="mt-1 h-4 w-4 rounded border-fg/30 text-[rgb(var(--brand-accent))] focus:ring-[rgb(var(--brand-accent))]"
+        />
+        <span>Sign me up for for updates, newsletters and promotions from Tap Truck VI.</span>
+      </label>
+
       <!-- Honeypot (bots fill this; humans won’t) -->
       <input name="company" class="hidden" tabindex="-1" autocomplete="off" />
-
+      
       <!-- Turnstile -->
       {#key $page.url.pathname}
         <Turnstile

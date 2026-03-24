@@ -65,13 +65,13 @@
            focus:ring-[rgb(var(--brand-primary))];
   }
 
-
   /* Nav Button Styling */
   .nav-cta {
       display: inline-flex;
       align-items: center;
       justify-content: center;
 
+      
       padding: 0.5rem 1rem; /* ~ py-2 px-4 */
       border-radius: 0.5rem; /* rounded-xl */
       border: 2px solid rgb(var(--brand-secondary));
@@ -79,13 +79,13 @@
       font-weight: 600;
       font-size: 0.875rem;
 
-      transition: background-color 300ms ease, color 300ms ease, border-color 300ms ease;
+      transition: background-color 400ms ease, color 400ms ease, border-color 400ms ease;
     }
 
     .nav-cta:hover {
       background: rgb(var(--brand-secondary));
-      color: rgb(10 10 10); /* matches your dark bg */
-      border-color: rgb(var(--brand-secondary));
+      color: black; /* matches your dark bg */
+      border-color:rgb(var(--brand-secondary));
     }
 
     .nav-cta:focus-visible {

@@ -32,7 +32,7 @@
       <!-- CTAs -->
       <div class="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
         <a
-          href="/pricing"
+          href="/book"
           class="inline-flex items-center justify-center rounded-xl border border-white/20 bg-white/10 px-5 py-3 text-sm font-semibold text-white backdrop-blur hover:bg-white/15"
         >
           Check Availability

@@ -90,7 +90,7 @@
 
       <div class="mt-6 space-y-5 text-base leading-8 text-fg/80">
         <p>
-          Cody & I started Tap Truck VI with Cody because we wanted to build something that reflects what
+          Cody & I started Tap Truck VI because we wanted to build something that reflects what
           we value: great experiences, thoughtful presentation, and a real connection to the place
           we are lucky to call home.
         </p>
@@ -98,21 +98,18 @@
         <p>
           We moved to Vancouver Island over three years ago, and it quickly became clear that this
           is where we want to be long term. Then we started to think of all the things we loved most about this 
-          place and how we could bring them all together and invite more people to share the island experience. 
+          place and how we could bring them all together and invite more people to share the island experience.
+          We both love craft beer and have a real appreciation for the craft scene on the island, and
+          that interest has shaped a lot of the vision for Tap Truck VI. 
         </p>
 
         <p>
-          We both love craft beer and have a real appreciation for the craft scene on the island.
-          That interest has shaped a lot of the vision for Tap Truck VI. We want the business to feel
-          polished and professional, but also rooted in the community and the quality that makes
-          local events and local makers stand out.
+          Our goal is to facilitate meaningful and joyous events and use these things we love about Vancouver Island 
+          and use them as a catalyst for celebration, conversation, and good times. At the end of the day, we want 
+          Tap Truck VI to be something people remember not just because it looks great, but because it adds to the 
+          atmosphere of the event and makes any event that much more special.
         </p>
 
-        <p>
-          At the end of the day, we want Tap Truck VI to be something people remember not just
-          because it looks great, but because it adds to the atmosphere of the event and helps make
-          the whole experience feel special.
-        </p>
         <div class="mt-10 flex justify-end pr-6">
           <div class="w-[220px]">
             <p class="italic text-fg/70">— Adam</p>
