@@ -12,6 +12,7 @@ declare global {
 	// META PIXEL WINDOW 
 	interface Window {
  		 fbq?: (...args: any[]) => void;
+		 gtag?: (...args: unknown[]) => void;
 	}
 }
 

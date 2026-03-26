@@ -113,7 +113,7 @@ if (newsletterOptIn) {
     console.error('MailerLite subscribe failed:', err);
   }
 }
-    return { success: true };
+    return { success: true, newsletterOptIn };
   }
 };
 

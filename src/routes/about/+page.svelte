@@ -105,7 +105,7 @@
 
         <p>
           Our goal is to facilitate meaningful and joyous events and use these things we love about Vancouver Island 
-          and use them as a catalyst for celebration, conversation, and good times. At the end of the day, we want 
+          as a catalyst for celebration, conversation, and good times. At the end of the day, we want 
           Tap Truck VI to be something people remember not just because it looks great, but because it adds to the 
           atmosphere of the event and makes any event that much more special.
         </p>

@@ -1,3 +1,8 @@
+<script lang="ts">
+  import GiveawayPopup from '$lib/components/GiveawayPopup.svelte';
+</script>
+
+<GiveawayPopup />
 
 <!-- src/routes/+page.svelte -->
 <section class="relative w-full overflow-hidden min-h-[45vh] sm:min-h-[52vh] lg:min-h-[60vh]">

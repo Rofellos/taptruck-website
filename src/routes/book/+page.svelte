@@ -2,12 +2,35 @@
   import { enhance } from '$app/forms';
   import { PUBLIC_TURNSTILE_SITE_KEY } from '$env/static/public';
   import { page } from '$app/stores';
-
   import Turnstile from '$lib/components/Turnstile.svelte';
+  import { trackEvent } from '$lib/utils/analytics';
+
 
   let turnstileToken = '';
-</script>
 
+  // GOOGLE ANALYTICS SCRIPT
+	let bookingTracked = false;
+
+	$: if ($page.form?.success && !bookingTracked) {
+		trackEvent('booking_inquiry_submit', {
+			event_category: 'engagement',
+			event_label: 'book_page'
+		});
+
+		if ($page.form?.newsletterOptIn) {
+			trackEvent('newsletter_signup', {
+				event_category: 'engagement',
+				event_label: 'booking_form_opt_in'
+			});
+		}
+
+		bookingTracked = true;
+	}
+
+	$: if (!$page.form?.success) {
+		bookingTracked = false;
+	}
+</script>
 
 <div class="mx-auto max-w-6xl px-4 pt-24 pb-10 md:pt-24 md:pb-10">
   <section class="bg-bg text-fg">

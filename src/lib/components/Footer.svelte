@@ -1,4 +1,6 @@
 <script lang="ts">
+import { trackEvent } from '$lib/utils/analytics';
+
 	let email = '';
 	let status: 'idle' | 'loading' | 'success' | 'error' = 'idle';
 	let message = '';
@@ -30,6 +32,11 @@
 			status = 'success';
 			message = result.message ?? 'Thanks — you’re on the list.';
 			email = '';
+
+			trackEvent('newsletter_signup', {
+				event_category: 'engagement',
+				event_label: 'footer_newsletter'
+			});
 		} catch (error) {
 			status = 'error';
 			message = 'Network error. Please try again.';

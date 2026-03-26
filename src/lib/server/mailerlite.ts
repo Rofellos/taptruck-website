@@ -1,8 +1,9 @@
 import { env } from '$env/dynamic/private';
 
-export async function subscribeToMailerLite(email: string) {
+export async function subscribeToMailerLite(email: string, groupIdOverride?: string) {
 	const token = env.MAILERLITE_API_TOKEN;
-	const groupId = env.MAILERLITE_GROUP_ID;
+	const defaultGroupId = env.MAILERLITE_GROUP_ID;
+	const groupId = groupIdOverride ?? defaultGroupId;
 
 	if (!token || !groupId) {
 		console.error('Missing MailerLite env vars');
