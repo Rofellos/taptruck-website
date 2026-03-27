@@ -112,7 +112,7 @@
 
         <div class="mt-10 flex justify-end pr-6">
           <div class="w-[220px]">
-            <p class="italic text-fg/70">— Adam</p>
+            <p class="italic text-fg/70">- Adam</p>
             <p class="text-sm text-fg/50">Co-founder, Tap Truck VI</p>
           </div>
         </div>
@@ -128,7 +128,7 @@
         Built for weddings, parties, and standout gatherings
       </h2>
       <p class="mt-4 text-base leading-7 text-fg/75 sm:text-lg">
-        We’re creating a service that feels elevated, approachable, and memorable — something that
+        We’re creating a service that feels elevated, approachable, and memorable - something that
         fits naturally into events where atmosphere matters.
       </p>
 
