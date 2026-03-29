@@ -2,17 +2,18 @@
   import { enhance } from '$app/forms';
   import { PUBLIC_TURNSTILE_SITE_KEY } from '$env/static/public';
   import { page } from '$app/stores';
+  import { browser } from '$app/environment';
   import Turnstile from '$lib/components/Turnstile.svelte';
   import { trackEvent } from '$lib/utils/analytics';
 
-
   let turnstileToken = '';
 
-  // GOOGLE ANALYTICS SCRIPT
+  // TRACK SUCCESS ONLY ONCE PER SUCCESSFUL SUBMISSION
 	let bookingTracked = false;
 
-	$: if ($page.form?.success && !bookingTracked) {
-		trackEvent('booking_inquiry_submit', {
+	$: if (browser && $page.form?.success && !bookingTracked) {
+		// GOOGLE ANALYTICS
+    trackEvent('booking_inquiry_submit', {
 			event_category: 'engagement',
 			event_label: 'book_page'
 		});
@@ -24,9 +25,16 @@
 			});
 		}
 
+    // META PIXEL 
+    if (window.fbq) {
+      window.fbq('track', 'Lead', {
+        content_name: 'Booking Form'
+      });
+    }
 		bookingTracked = true;
 	}
 
+  // RESET GUARD WHEN FORM IS NO LONGER IN SUCCESS STATE
 	$: if (!$page.form?.success) {
 		bookingTracked = false;
 	}

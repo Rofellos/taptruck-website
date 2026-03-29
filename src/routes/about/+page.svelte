@@ -61,8 +61,8 @@
           service smooth and professional.
         </p>
         <p>
-          We also care a lot about working with the local community and showcasing the quality of
-          the craft scene on Vancouver Island wherever it makes sense.
+          We also care a lot about working with the local community and will work to showcase the quality of
+          the Vancouver Island craft beer scene at any opportunity.
         </p>
       </div>
     </div>
