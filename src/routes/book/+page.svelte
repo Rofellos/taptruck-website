@@ -1,10 +1,19 @@
 <script lang="ts">
   import { enhance } from '$app/forms';
+  import { onMount } from 'svelte';
   import { PUBLIC_TURNSTILE_SITE_KEY } from '$env/static/public';
   import { page } from '$app/stores';
   import { browser } from '$app/environment';
   import Turnstile from '$lib/components/Turnstile.svelte';
   import { trackEvent } from '$lib/utils/analytics';
+
+  onMount(() => {
+    if (browser && window.fbq) {
+      window.fbq('track', 'ViewContent', {
+        content_name: 'Booking Page'
+      });
+    }
+  });
 
   let turnstileToken = '';
 
