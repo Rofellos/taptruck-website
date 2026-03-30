@@ -23,15 +23,15 @@
     <div class="max-w-2xl ">
     
       <h1 class="mt-5 text-4xl font-extrabold tracking-tight text-white lg:text-5xl">
-        Bring the bar to your event.
+        The Mobile Tap Truck Bar for Any Event.
       </h1>
       
 
       <p class="mt-4 text-base leading-relaxed text-white/85 lg:text-lg">
-        Our mission at Tap Truck VI is to provide a premium mobile tap setup for weddings, corporate events, and festivals
-        across Vancouver Island and the Lower Mainland.<br /><br/>
+        A new centrepeice for weddings, private parties, and corporate events across Vancouver Island and the Lower Mainland.
+        Craft beer, cocktails, and a unique bar experience your guests won’t forget.<br /><br/>
         
-        We are in the process of preparing the Tap Truck for our first season, but we are open to inquiries and early bookings. 
+        Now booking for Summer 2026 — limited weekend availability. Secure your date now.
       </p>
 
       <!-- CTAs -->
