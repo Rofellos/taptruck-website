@@ -23,12 +23,11 @@
     <div class="max-w-2xl ">
     
       <h1 class="mt-5 text-4xl font-extrabold tracking-tight text-white lg:text-5xl">
-        The Mobile Tap Truck Bar for Any Event.
+        The Mobile Tap Truck Bar.
       </h1>
-      
 
       <p class="mt-4 text-base leading-relaxed text-white/85 lg:text-lg">
-        A new centrepeice for weddings, private parties, and corporate events across Vancouver Island and the Lower Mainland.
+        A new centrepeice for weddings, private parties, and corporate events across Vancouver Island and the Lower Mainland is here.
         Craft beer, cocktails, and a unique bar experience your guests won’t forget.<br /><br/>
         
         Now booking for Summer 2026 — limited weekend availability. Secure your date now.
