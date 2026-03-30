@@ -34,7 +34,9 @@
       </h1>
       <p class="mt-6 text-base leading-7 text-fg/75 sm:text-lg">
         Tap Truck VI was created to bring a unique, polished, and memorable draft service experience
-        to weddings, private parties, corporate events, and celebrations across Vancouver Island.
+        to weddings, private parties, corporate events, and celebrations across Vancouver Island. Featuring 
+        our uniquely rebuilt 1932 Chevy fitted with 4 draught taps - allowing you to serve what you want, 
+        where you want it, on tap.
       </p>
     </div>
   </div>
