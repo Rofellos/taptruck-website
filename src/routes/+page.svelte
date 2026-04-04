@@ -86,7 +86,7 @@
         </h3>
 
         <p class="mt-3 text-sm leading-7 text-[rgb(var(--fg))]/75">
-          A polished draft service setup that complements the atmosphere of your wedding and
+          A polished draught service setup that complements the atmosphere of your wedding and
           creates a guest experience that feels thoughtful, unique, and easy to enjoy.
         </p>
 
