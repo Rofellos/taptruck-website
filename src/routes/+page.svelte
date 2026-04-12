@@ -30,7 +30,7 @@
         A new centrepeice for weddings, private parties, and corporate events across Vancouver Island and the Lower Mainland is here.
         Craft beer, cocktails, and a unique bar experience your guests won’t forget.<br /><br/>
         
-        Now booking for Summer 2026 — limited weekend availability. Secure your date now.
+        Now booking for Summer 2026 - limited weekend availability. Secure your date now.
       </p>
 
       <!-- CTAs -->
