@@ -2,28 +2,34 @@
   import GiveawayPopup from '$lib/components/GiveawayPopup.svelte';
 </script>
 
+<svelte:head>
+	<link rel="preload" as="image" href="/Truck_on_grass.jpg" />
+</svelte:head>
+
 <GiveawayPopup />
 
 <!-- src/routes/+page.svelte -->
-<section class="relative w-full overflow-hidden min-h-[45vh] sm:min-h-[52vh] lg:min-h-[60vh]">
+<section class="relative w-full overflow-hidden min-h-[60vh] sm:min-h-[52vh] lg:min-h-[60vh]">
   <!-- Background image -->
   <img
-    src="/teaser_photo.jpg"
+    src="/Truck_on_grass.jpg"
     alt="Tap Truck at an event"
-    class="absolute inset-0 h-full w-full object-cover object-[60%_60%] sm:object-[30%_20%] lg:object-[center_22%]"
+    loading="eager"
+	  fetchpriority="high"
+    class="absolute inset-0 h-full w-full object-cover object-[45%_60%] sm:object-[30%_20%] lg:object-[center_22%]"
   />
 
   <!-- Dark overlay + gradient for readability -->
   <!-- <div class="absolute inset-0 bg-black/50"></div> -->
   <div class="absolute inset-0 bg-black/70 lg:hidden"></div>
-  <div class="hidden md:block absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent"></div>
+  <div class="hidden md:block absolute inset-0 bg-gradient-to-r from-black/85 via-black/45 to-transparent"></div>
 
   <!-- Content -->
-  <div class="relative mx-auto flex min-h-[40vh] max-w-6xl items-center px-4 py-12 pt-32 md:min-h-[60h] lg:min-h-[100vh] lg:py-20">
-    <div class="max-w-2xl ">
+  <div class="relative mx-auto flex min-h-[40vh] max-w-6xl items-start px-4 py-12 pt-32 md:pt-10 md:min-h-[60vh] lg:min-h-[100vh] lg:py-20">
+    <div class="pt-0 md:pt-20 max-w-lg">
     
       <h1 class="mt-5 text-4xl font-extrabold tracking-tight text-white lg:text-5xl">
-        The Mobile Tap Truck Bar.
+        The Mobile <br>Tap Truck Bar.
       </h1>
 
       <p class="mt-4 text-base leading-relaxed text-white/85 lg:text-lg">

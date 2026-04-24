@@ -15,7 +15,7 @@
   });
 </script>
 
-<nav
+<nav data-sveltekit-preload-data
   class={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
     scrolled
       ? 'bg-zinc-950/72 backdrop-blur-xl border-b border-white/10 shadow-[0_8px_30px_rgba(0,0,0,0.28)]'
@@ -35,6 +35,12 @@
 				class="nav-cta"
 			>
 				About
+			</a>
+			<a
+				href="/pricing"
+				class="nav-cta"
+			>
+				Pricing
 			</a>
 			<a
 				href="/book"

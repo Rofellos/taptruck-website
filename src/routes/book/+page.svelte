@@ -82,11 +82,11 @@
 
   <!-- New Form Section -->
 	<div class="form-card">
-		<iframe
-			src="https://hello.dubsado.com/public/form/view/69dab8599829afc4adbe609c?iframe=true"
-			title="Tap Truck Inquiry Form"
-			frameborder="0"
-			style="width: 100%; border: 0; min-height: 800px;"
+		<iframe 
+			title="Inquiry Form"
+			src="https://hello.dubsado.com/public/form/view/69dab8599829afc4adbe609c?iframe=true" 
+			frameBorder="0"
+			style="width: 100%; border: 0; min-height: 800px;" 
 		></iframe>
 	</div>
 </section>
