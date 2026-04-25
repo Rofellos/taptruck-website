@@ -9,6 +9,13 @@
 <script>
   const phoneNumber = "(437) 350-0049";
   const phoneHref = "tel:+14373500049";
+  import { onMount } from 'svelte';
+
+  onMount(() => {
+    if (typeof window !== 'undefined' && window.fbq) {
+      window.fbq('track', 'Form_Submission');
+    }
+  });
 </script>
 
 <section class="bg-stone-50 px-6 pt-36 pb-24 text-stone-900">

@@ -10,7 +10,7 @@
 
   onMount(() => {
     if (browser && (window as any).fbq) {
-      (window as any).fbq('track', 'ViewContent', {
+      (window as any).fbq('track', 'ViewForm', {
         content_name: 'Booking Page'
       });
     }
