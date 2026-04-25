@@ -3,6 +3,7 @@
   import Nav from '$lib/components/Nav.svelte';
   import Footer from '$lib/components/Footer.svelte';
   import CookieBanner from '$lib/components/CookieBanner.svelte';
+  import CallBar from '$lib/components/CallBar.svelte';
 
   let { children } = $props();
 
@@ -37,3 +38,4 @@
 
 <Footer />
 <CookieBanner />
+<CallBar />

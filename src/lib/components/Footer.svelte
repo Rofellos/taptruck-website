@@ -134,7 +134,7 @@ import { trackEvent } from '$lib/utils/analytics';
 
 	</div>
 
-	<div class="border-t border-fg/10 py-2 text-center text-xs text-fg/60">
-		© {new Date().getFullYear()} Tap Truck VI
+	<div class="border-t border-fg/10 pl-6 py-4 text-left sm:text-center text-xs text-fg/60">
+		© {new Date().getFullYear()} Tap Truck <br> Vancouver Island Inc.
 	</div>
 </footer>
