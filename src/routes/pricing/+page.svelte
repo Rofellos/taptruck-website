@@ -52,18 +52,7 @@
 			items: [
 				'Up to 4 hours of service',
 				'Four tap beverages',
-				'One bartender',
-				'Bottled wine service'
-			]
-		},
-		{
-			name: 'Custom Private Event',
-			price: 'Quoted based on event details',
-			items: [
-				'Flexible service time',
-				'Custom tap beverage options',
-				'Bartending service available',
-				'Great for birthdays, backyard parties, and celebrations'
+				'One bartender'
 			]
 		}
 	];
