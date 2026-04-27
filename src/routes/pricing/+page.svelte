@@ -67,7 +67,7 @@
 </script>
 
 <svelte:head>
-	<title>Pricing | Tap Truck VI</title>
+	<title>Pricing | Tap Truck Vancouver Island</title>
 	<meta
 		name="description"
 		content="View Tap Truck VI wedding and private event package options."
@@ -75,7 +75,7 @@
 </svelte:head>
 
 <section class="bg-bg text-fg">
-	<div class="mx-auto max-w-7xl px-4 pt-16 pb-12 sm:px-6 sm:pt-20 lg:px-8 lg:pt-24">
+	<div class="mx-auto max-w-7xl px-4 pt-36 pb-20">
 		<div class="mx-auto max-w-3xl text-center">
 			<p class="text-sm font-semibold uppercase tracking-[0.2em] text-[rgb(var(--brand-accent))]">
 				Pricing
@@ -172,7 +172,7 @@
 				</div>
 
 				<div class="mt-10 text-center">
-					<a href="/book" class="btn btn-primary">Check availability</a>
+					<a href="/book" class="btn btn-primary">Secure your date now -></a>
 				</div>
 			</div>
 		{/if}

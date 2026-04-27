@@ -17,7 +17,7 @@
     }}
     
 	class="
-		fixed bottom-4 right-4
+		fixed bottom-8 right-8
 		inline-flex items-center gap-2 rounded-full
 		bg-[rgb(var(--brand-primary-dark))]/95
 		px-4 md:px-6 py-3 text-sm font-semibold text-white

@@ -99,7 +99,7 @@
     .booking-shell {
 		max-width: 980px;
 		margin: 0 auto;
-		padding: 10rem 1.25rem 5rem;
+		padding: 11rem 1.25rem 5rem;
 	}
 
 	.booking-intro {
@@ -108,7 +108,8 @@
 	}
 
 	.booking-intro .eyebrow {
-		margin: 0 0 0.75rem;
+    width: 100%;
+		margin: 0 0 0;
 		font-size: 0.95rem;
 		font-weight: 700;
 		letter-spacing: 0.25em;
@@ -152,7 +153,7 @@
 
 	@media (max-width: 640px) {
 		.booking-shell {
-			padding: 10rem 1rem 4rem;
+			padding: 11rem 1rem 4rem;
 		}
 
 		.booking-intro {

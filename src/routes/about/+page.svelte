@@ -9,34 +9,34 @@
 <script lang="ts">
   const values = [
     {
-      title: 'Professional experience',
-      text: 'We want every event to feel polished, easy, and memorable from the first pour to the last.'
+      title: 'Beautifully Simple',
+      text: 'Designed to serve beautifully. Our tap truck keeps drinks flowing fast and effortlessly, while doubling as a standout feature your guests can’t help but gather around.'
+    },
+    {
+      title: 'Full Service',
+      text: 'Let us handle the mess so you can enjoy your event. We take care of the bar service from setup to cleanup and everything inbetween.'
     },
     {
       title: 'Island-driven',
-      text: 'Vancouver Island is home, and we’re proud to build something that fits the local event and craft scene.'
+      text: 'We support island made products wherever we can. Let us know what you like and we will be happy show you the best of what the island has to offer.'
     },
-    {
-      title: 'Thoughtful details',
-      text: 'From presentation to service flow, we care about the little things that make the whole setup feel elevated.'
-    }
+    
   ];
 </script>
 
 <section class="bg-bg text-fg">
-  <div class="mx-auto max-w-6xl px-4 pt-44 pb-20 md:pt-44 md:pb-20">
+  <div class="mx-auto max-w-6xl px-4 pt-36 pb-16 md:pt-36 md:pb-16">
     <div class="mx-auto max-w-3xl text-center">
-      <p class="text-sm font-semibold uppercase tracking-[0.2em] text-[rgb(var(--brand-accent))]">
-        About
+      <p class="text-sm font-semibold uppercase tracking-[0.2em] text-[rgb(var(--brand-accent))] text-center">
+        About Us
       </p>
       <h1 class="mt-4 text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
-        A mobile bar experience built for great events
+        More Than a Bar Setup
       </h1>
       <p class="mt-6 text-base leading-7 text-fg/75 sm:text-lg">
-        Tap Truck VI was created to bring a unique, polished, and memorable draft service experience
-        to weddings, private parties, corporate events, and celebrations across Vancouver Island. Featuring 
-        our uniquely rebuilt 1932 Chevy fitted with 4 draught taps - allowing you to serve what you want, 
-        where you want it, on tap.
+        Tap Truck brings a one of a kind mobile bar experience to weddings, private parties, corporate events, and celebrations across Vancouver Island.<br><br>
+        At the center of it all is our beautifully restored vintage truck, a statement piece that serves incredible drinks and instantly elevates the atmosphere of any event.<br><br>
+        From local craft beer and wine to cocktails and non alcoholic options, we help create an experience that feels seamless, memorable, and uniquely yours.<br><br>
       </p>
     </div>
   </div>
@@ -49,22 +49,22 @@
         What we do
       </p>
       <h2 class="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">
-        More than a bar setup
+        Built for Great Events
+      </h2>
+      <div class="mt-6 pb-4 space-y-4 text-white/80">
+        <p>
+          We believe service should feel polished, easy, and stress free from the first pour to the last.<br><br>
+          That means thoughtful setup, professional service, smooth flow, and a setup your guests will talk about long after the event ends.
+        </p>
+      </div>
+      <h2 class="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">
+        Proudly Vancouver Island
       </h2>
       <div class="mt-6 space-y-4 text-white/80">
         <p>
-          We’re building Tap Truck VI to be more than just a way to serve drinks. The goal is to
-          create a setup that adds to the atmosphere of an event and feels like part of the
-          experience, not just a service station.
-        </p>
-        <p>
-          Whether it’s a wedding, backyard celebration, staff event, or larger gathering, we want
-          the truck to bring personality, quality, and a strong visual presence while keeping the
-          service smooth and professional.
-        </p>
-        <p>
-          We also care a lot about working with the local community and will work to showcase the quality of
-          the Vancouver Island craft beer scene at any opportunity.
+          Vancouver Island is home, and supporting the local community matters to us.<br><br>
+          We love showcasing the incredible craft beverage scene here whenever possible, from local breweries to island made favourites.
+
         </p>
       </div>
     </div>
@@ -84,32 +84,23 @@
   <div class="mx-auto max-w-5xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
     <div class="rounded-3xl border border-fg/10 bg-white/60 p-6 shadow-sm backdrop-blur sm:p-8 lg:p-10">
       <p class="text-sm font-semibold uppercase tracking-[0.2em] text-[rgb(var(--brand-accent))]">
-        Founders
+        About us
       </p>
       <h2 class="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">
-        Why we started Tap Truck VI
+        Hi, we're Adam and Cody.
       </h2>
 
       <div class="mt-6 space-y-5 text-base leading-8 text-fg/80">
         <p>
-          Cody & I started Tap Truck VI because we wanted to build something that reflects what
-          we value: great experiences, thoughtful presentation, and a real connection to the place
-          we are lucky to call home.
+          We started Tap Truck with one simple idea: create something people genuinely remember.
         </p>
 
         <p>
-          We moved to Vancouver Island over three years ago, and it quickly became clear that this
-          is where we want to be long term. Then we started to think of all the things we loved most about this 
-          place and how we could bring them all together and invite more people to share the island experience.
-          We both love craft beer and have a real appreciation for the craft scene on the island, and
-          that interest has shaped a lot of the vision for Tap Truck VI. 
+          After moving to Vancouver Island, we fell in love with the community, the events, the craft scene, and the lifestyle here. We wanted to build something that brought all of those things together.
         </p>
 
         <p>
-          Our goal is to facilitate meaningful and joyous events and use these things we love about Vancouver Island 
-          as a catalyst for celebration, conversation, and good times. At the end of the day, we want 
-          Tap Truck VI to be something people remember not just because it looks great, but because it adds to the 
-          atmosphere of the event and makes any event that much more special.
+          Today, Tap Truck helps turn great gatherings into unforgettable ones by combining a standout vintage truck, quality drinks, and an experience guests instantly connect with.
         </p>
 
         <div class="mt-10 flex justify-end pr-6">

@@ -45,10 +45,10 @@ import { trackEvent } from '$lib/utils/analytics';
 </script>
 
 <footer class="border-t border-fg/10 bg-bg text-fg">
-	<div class="mx-auto grid max-w-6xl gap-8 px-4 py-6 sm:grid-cols-2 lg:grid-cols-4">
+	<div class="mx-auto grid max-w-6xl gap-8 px-4 py-8 sm:grid-cols-2 lg:grid-cols-4">
 		
 		<div>
-			<div class="text-lg font-semibold">Tap Truck VI</div>
+			<div class="text-lg font-semibold">Tap Truck Vancouver Island</div>
 			<p class="mt-2 text-sm text-fg/70">
 				Mobile tap truck & event bartending service.
 			</p>
@@ -88,8 +88,8 @@ import { trackEvent } from '$lib/utils/analytics';
 		<div class="text-sm">
 			<div class="font-semibold">Contact</div>
 			<div class="mt-2 grid gap-2 text-fg/70">
-				<span>bookings@taptruckvi.ca</span>
-				<span>Vancouver Island, BC</span>
+				<span>info@taptruckvi.ca</span>
+				<span>(437)-350-0049</span>
 			</div>
 		</div>
 
@@ -134,7 +134,7 @@ import { trackEvent } from '$lib/utils/analytics';
 
 	</div>
 
-	<div class="border-t border-fg/10 pl-6 py-4 text-left sm:text-center text-xs text-fg/60">
+	<div class="border-t border-fg/10 pl-6 py-6 text-left sm:text-center text-xs text-fg/60">
 		© {new Date().getFullYear()} Tap Truck <br> Vancouver Island Inc.
 	</div>
 </footer>

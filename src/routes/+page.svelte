@@ -8,62 +8,83 @@
 
 <GiveawayPopup />
 
-<!-- src/routes/+page.svelte -->
-<section class="relative w-full overflow-hidden min-h-[60vh] sm:min-h-[52vh] lg:min-h-[60vh]">
-  <!-- Background image -->
-  <img
-    src="/Truck_on_grass.jpg"
-    alt="Tap Truck at an event"
-    loading="eager"
-	  fetchpriority="high"
-    class="absolute inset-0 h-full w-full object-cover object-[45%_60%] sm:object-[30%_20%] lg:object-[center_22%]"
-  />
+<!-- HERO SECTION -->
 
-  <!-- Dark overlay + gradient for readability -->
-  <!-- <div class="absolute inset-0 bg-black/50"></div> -->
-  <div class="absolute inset-0 bg-black/70 lg:hidden"></div>
-  <div class="hidden md:block absolute inset-0 bg-gradient-to-r from-black/85 via-black/45 to-transparent"></div>
-
-  <!-- Content -->
-  <div class="relative mx-auto flex min-h-[40vh] max-w-6xl items-start px-4 py-12 pt-32 md:pt-10 md:min-h-[60vh] lg:min-h-[100vh] lg:py-20">
-    <div class="pt-0 md:pt-20 max-w-lg">
-    
-      <h1 class="mt-5 text-4xl font-extrabold tracking-tight text-white lg:text-5xl">
-        The Mobile <br>Tap Truck Bar.
-      </h1>
-
-      <p class="mt-4 text-base leading-relaxed text-white/85 lg:text-lg">
-        A new centrepeice for weddings, private parties, and corporate events across Vancouver Island and the Lower Mainland is here.
-        Craft beer, cocktails, and a unique bar experience your guests won’t forget.<br /><br/>
-        
-        Now booking for Summer 2026 - limited weekend availability. Secure your date now.
-      </p>
-
-      <!-- CTAs -->
-      <div class="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
-        <a
-          href="/book"
-          class="inline-flex items-center justify-center rounded-xl border border-white/20 bg-white/10 px-5 py-3 text-sm font-semibold text-white backdrop-blur hover:bg-white/15"
-        >
-          Check Availability
-        </a>
-      </div>
-
-      <!-- Trust row -->
-      <!-- <div class="mt-10 grid gap-3 sm:grid-cols-3">
-        <div class="rounded-xl border border-white/15 bg-white/10 px-4 py-3 text-sm text-white/90 backdrop-blur">
-          ✅ Professional setup
-        </div>
-        <div class="rounded-xl border border-white/15 bg-white/10 px-4 py-3 text-sm text-white/90 backdrop-blur">
-          ✅ Fast service + clean pour
-        </div>
-        <div class="rounded-xl border border-white/15 bg-white/10 px-4 py-3 text-sm text-white/90 backdrop-blur">
-          ✅ Vancouver Island coverage
-        </div>
-      </div> -->
-    </div>
-  </div>
+<!-- MOBILE HERO -->
+<section class="relative h-[360px] overflow-hidden md:hidden">
+	<img
+		src="/Truck_on_grass.jpg"
+		alt="Tap Truck at an event"
+		class="h-full w-full object-cover object-[50%_65%]"
+	/>
+	<div class="absolute inset-0 bg-black/10"></div>
 </section>
+<section class="text-center bg-[rgb(var(--bg))] px-5 pt-10 pb-10 text-[rgb(var(--fg))] md:hidden">
+	<div class="mx-auto max-w-md">
+		<h1 class="text-4xl font-extrabold tracking-tight">
+			The Mobile<br />Tap Truck Bar.
+		</h1>
+
+		<p class="mt-5 text-base leading-relaxed">
+			A new centrepiece for weddings, private parties, and corporate events across Vancouver Island
+			and the Lower Mainland is here. Craft beer, cocktails, and a unique bar experience your guests
+			won’t forget.
+		</p>
+
+		<p class="mt-6 text-base leading-relaxed">
+			Now booking for Summer 2026 - limited weekend availability. Secure your date now.
+		</p>
+
+		<a
+			href="/book"
+      type="button"
+			class="btn btn-primary mt-8 inline-flex w-full items-center justify-center px-5 py-4 text-sm "
+		>
+			Secure your date
+		</a>
+	</div>
+</section>
+
+<!-- DESKTOP/TABLET HERO -->
+
+<section class="relative hidden w-full overflow-hidden sm:block sm:min-h-[52vh] md:min-h-[80vh] lg:min-h-[90vh]">
+	<img
+		src="/Truck_on_grass.jpg"
+		alt="Tap Truck at an event"
+		loading="eager"
+		fetchpriority="high"
+		class="absolute inset-0 h-full w-full object-cover sm:object-[30%_20%] lg:object-[center_55%]"
+	/>
+
+	<div class="hidden sm:block absolute inset-0 bg-gradient-to-r from-black/85 via-black/45 to-transparent"></div>
+
+	<div class="relative mx-auto flex max-w-6xl items-start px-4 py-20 md:min-h-[60vh] lg:min-h-[60vh]">
+		<div class="max-w-lg pt-8">
+			<h1 class="text-5xl font-extrabold tracking-tight text-white">
+				The Mobile<br />Tap Truck Bar.
+			</h1>
+
+			<p class="mt-4 text-lg leading-relaxed text-white/85">
+				A new centrepiece for weddings, private parties, and corporate events across Vancouver Island
+				and the Lower Mainland is here. Craft beer, cocktails, and a unique bar experience your guests
+				won’t forget.
+			</p>
+
+			<p class="mt-6 text-lg leading-relaxed text-white/85">
+				Now booking for Summer 2026 - limited weekend availability. Secure your date now.
+			</p>
+
+			<a
+				href="/book"
+				class="mt-8 inline-flex items-center justify-center rounded-xl border border-white/20 bg-white/10 px-5 py-3 text-sm font-semibold text-white backdrop-blur transition hover:bg-white/15"
+			>
+				Secure your date
+			</a>
+		</div>
+	</div>
+</section>
+
+<!-- MAIN PAGE CONTENT SECTION -->
 
 <section class="bg-[rgb(var(--bg))] text-[rgb(var(--fg))]">
   <div class="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
@@ -76,7 +97,7 @@
       </h2>
       <p class="mt-4 text-base leading-7 text-[rgb(var(--fg))]/75 sm:text-lg">
         Whether you’re planning an elegant wedding, a polished corporate gathering,
-        or a memorable private celebration, Tap Truck VI brings a unique service experience
+        or a memorable private celebration, our Tap Truck brings a unique service experience
         that adds to the atmosphere and keeps things running smoothly.
       </p>
     </div>

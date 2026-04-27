@@ -151,7 +151,7 @@
 			{/if}
 
 			<p class="mt-4 text-xs leading-5 text-fg/55">
-				No purchase necessary. Winner will be contacted by email by April 30th. By entering, you agree to receive occasional marketing emails from Tap Truck VI.
+				No purchase necessary. Winner will be contacted by email by August 30th. By entering, you agree to receive occasional marketing emails from Tap Truck VI.
 			</p>
 		</div>
 	</div>
