@@ -13,7 +13,7 @@
 
   onMount(() => {
     if (typeof window !== 'undefined' && window.fbq) {
-      window.fbq('track', 'Form_Submission');
+      window.fbq('track', 'Lead');
     }
   });
 </script>
