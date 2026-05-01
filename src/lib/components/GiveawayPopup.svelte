@@ -8,7 +8,7 @@
 	let message = '';
 
 	const STORAGE_KEY = 'taptruck-giveaway-dismissed-v1';
-	const SHOW_DELAY = 3000;
+	const SHOW_DELAY = 5000;
 
 	onMount(() => {
 		const dismissed = localStorage.getItem(STORAGE_KEY);
