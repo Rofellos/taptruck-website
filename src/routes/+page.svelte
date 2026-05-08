@@ -22,7 +22,7 @@
 <section class="text-center bg-[rgb(var(--bg))] px-5 pt-10 pb-10 text-[rgb(var(--fg))] md:hidden">
 	<div class="mx-auto max-w-md">
 		<h1 class="text-4xl font-extrabold tracking-tight">
-			The Mobile<br />Tap Truck Bar.
+			A Bar Worth<br />Gathering Around.
 		</h1>
 
 		<p class="mt-5 text-base leading-relaxed">
@@ -56,12 +56,12 @@
 		class="absolute inset-0 h-full w-full object-cover sm:object-[30%_20%] lg:object-[center_55%]"
 	/>
 
-	<div class="hidden sm:block absolute inset-0 bg-gradient-to-r from-black/85 via-black/45 to-transparent"></div>
+	<div class="hidden sm:block absolute inset-0 bg-gradient-to-r from-black/70 via-black/30 to-transparent"></div>
 
 	<div class="relative mx-auto flex max-w-6xl items-start px-4 py-20 md:min-h-[60vh] lg:min-h-[60vh]">
 		<div class="max-w-lg pt-8">
 			<h1 class="text-5xl font-extrabold tracking-tight text-white">
-				The Mobile<br />Tap Truck Bar.
+				A Bar Worth<br />Gathering Around.
 			</h1>
 
 			<p class="mt-4 text-lg leading-relaxed text-white/85">
@@ -71,7 +71,7 @@
 			</p>
 
 			<p class="mt-6 text-lg leading-relaxed text-white/85">
-				Now booking for Summer 2026 - limited weekend availability. Secure your date now.
+				2026 dates are booking fast. Get in touch <br>with us now to see how we can transform <br> your event!
 			</p>
 
 			<a
