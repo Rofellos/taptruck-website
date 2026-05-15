@@ -26,19 +26,35 @@
 
 <section class="bg-bg text-fg">
   <div class="mx-auto max-w-6xl px-4 pt-36 pb-16 md:pt-36 md:pb-16">
-    <div class="mx-auto max-w-3xl text-center">
+    <div class="mx-auto max-w-3xl text-center mb-10">
       <p class="text-sm font-semibold uppercase tracking-[0.2em] text-[rgb(var(--brand-accent))] text-center">
         About Us
       </p>
-      <h1 class="mt-4 text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
-        More Than a Bar Setup
-      </h1>
-      <p class="mt-6 text-base leading-7 text-fg/75 sm:text-lg">
-        Tap Truck brings a one of a kind mobile bar experience to weddings, private parties, corporate events, and celebrations across Vancouver Island.<br><br>
-        At the center of it all is our beautifully restored vintage truck, a statement piece that serves incredible drinks and instantly elevates the atmosphere of any event.<br><br>
-        From local craft beer and wine to cocktails and non alcoholic options, we help create an experience that feels seamless, memorable, and uniquely yours.<br><br>
-      </p>
     </div>
+
+    <div class="flex flex-col md:flex-row items-center gap-5">
+      <!-- Text — always renders first in DOM, stays left on desktop -->
+      <div class="w-full md:w-2/3 order-1">
+        <h1 class="mt-4 text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
+          More Than a Bar Setup
+        </h1>
+        <p class="mt-6 text-base leading-7 text-fg/75 sm:text-lg">
+          Tap Truck brings a one of a kind mobile bar experience to weddings, private parties, corporate events, and celebrations across Vancouver Island.<br><br>
+          At the center of it all is our beautifully restored vintage truck, a statement piece that serves incredible drinks and instantly elevates the atmosphere of any event.<br><br>
+          From local craft beer and wine to cocktails and non alcoholic options, we help create an experience that feels seamless, memorable, and uniquely yours.<br><br>
+        </p>
+      </div>
+
+      <!-- Truck image — drops below text on mobile, moves left on desktop -->
+      <div class="w-full md:w-1/3 flex justify-center order-2 md:order-none">
+        <img
+          src="/Sketch_OFF WHITE.png"
+          alt="1932 Chevy Tap Truck"
+          class="w-full max-w-md object-contain"
+        />
+      </div>
+    </div>
+
   </div>
 </section>
 
