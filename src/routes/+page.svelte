@@ -40,7 +40,7 @@
 
 	<div class="hidden sm:block absolute inset-0 bg-gradient-to-r from-black/60 via-black/20 to-transparent"></div>
 
-	<div class="relative mx-auto flex max-w-6xl items-start px-4 py-24 md:py-64 md:min-h-[60vh] lg:min-h-[60vh]">
+	<div class="relative mx-auto flex max-w-6xl items-start px-4 py-24 md:py-56 md:min-h-[60vh] lg:min-h-[60vh]">
 		<div class="max-w-lg pt-8">
 			<h1 class="text-6xl font-extrabold tracking-tight text-white">
 				A Bar Worth <br> Gathering Around.
