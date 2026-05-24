@@ -27,7 +27,7 @@
 	<div class="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-white/25 to-transparent"></div>
 	<div class="relative mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
 		<a href="/" class="flex items-center gap-2 text-lg text-white font-semibold tracking-tight hover:opacity-90">
-			<img src="/nav logo bw.svg" class="h-14 w-auto" alt="Tap Truck logo">
+			<img src="/nav logo bw.svg" class="h-14 w-auto" alt="Tap Truck VI">
 		</a>
 
 		

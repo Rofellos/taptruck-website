@@ -4,6 +4,8 @@
 
 <svelte:head>
 	<link rel="preload" as="image" href="/Truck_on_grass.jpg" />
+    <title>Tap Truck VI | Mobile Bar Victoria & Vancouver</title>
+    <meta name="description" content="Mobile tap trucks and beverage rentals for weddings, corporate events, and private parties across Victoria and Vancouver" />
 </svelte:head>
 
 <GiveawayPopup />
@@ -18,8 +20,9 @@
 		class="h-full w-full object-cover object-[50%_65%]"
 	/>
 	<div class="absolute inset-0 bg-black/10"></div>
+  <div class="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-[rgb(var(--bg))] to-transparent"></div>
 </section>
-<section class="text-center bg-[rgb(var(--bg))] px-5 pt-4 text-[rgb(var(--fg))] sm:hidden">
+<section class="text-center bg-[rgb(var(--bg))] px-5 pt-6 text-[rgb(var(--fg))] sm:hidden">
 	<div class="mx-auto max-w-md">
 		<h1 class="text-4xl font-extrabold tracking-tight">
 			A Bar Worth<br />Gathering Around.
@@ -42,7 +45,7 @@
 
 	<div class="relative mx-auto flex max-w-6xl items-start px-4 py-24 md:py-56 md:min-h-[60vh] lg:min-h-[60vh]">
 		<div class="max-w-lg pt-8">
-			<h1 class="text-6xl font-extrabold tracking-tight text-white">
+			<h1 class="text-5xl lg:text-6xl font-extrabold tracking-tight text-white">
 				A Bar Worth <br> Gathering Around.
 			</h1>
 		</div>
@@ -52,7 +55,7 @@
 <!-- MAIN PAGE CONTENT SECTION -->
 
 <section class="bg-[rgb(var(--bg))] text-[rgb(var(--fg))]">
-  <div class="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
+  <div class="mx-auto max-w-7xl px-4 py-10 md:px-8 md:py-20">
     <div class="mx-auto max-w-3xl text-center">
       <p class="text-sm font-semibold uppercase tracking-[0.2em] text-[rgb(var(--brand-accent))]">
         Built for events that matter

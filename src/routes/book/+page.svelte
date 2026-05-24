@@ -69,6 +69,11 @@
 	}
 </script>
 
+<svelte:head>
+  <title>Book Now | Tap Truck VI</title>
+  <meta name="description" content="Book our mobile tap truck for your wedding, corporate event or private party in Victoria BC" />
+</svelte:head>
+
 <!-- New Booking Section -->
 <section class="bg-bg text-fg">
   <!-- New Title/Intro section -->
