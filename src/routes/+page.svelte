@@ -55,8 +55,8 @@
 <!-- MAIN PAGE CONTENT SECTION -->
 
 <section class="bg-[rgb(var(--bg))] text-[rgb(var(--fg))]">
-  <div class="mx-auto max-w-7xl px-4 py-10 md:px-8 md:py-20">
-    <div class="mx-auto max-w-3xl text-center">
+  <div class="mx-auto max-w-7xl px-4 py-10 md:px-8 md:py-10">
+    <div class="mx-auto max-w-3xl text-center pt-6">
       <p class="text-sm font-semibold uppercase tracking-[0.2em] text-[rgb(var(--brand-accent))]">
         Built for events that matter
       </p>
@@ -70,7 +70,7 @@
       </p>
     </div>
 
-    <div class="mt-10 grid gap-6 md:grid-cols-3">
+    <div class="mt-10 grid gap-6 md:grid-cols-3 py-6">
       <article class="group rounded-3xl border border-[rgb(var(--brand-primary))]/15 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg">
         <div class="inline-flex rounded-full bg-[rgb(var(--brand-secondary))]/25 px-3 py-1 text-xs font-semibold uppercase tracking-[0.15em] text-[rgb(var(--brand-accent))]">
           Weddings
@@ -140,7 +140,38 @@
         </a> -->
       </article>
     </div>
+    <div class="mx-auto max-w-3xl px-4 py-10 md:py-10 text-center">
+        <p class="text-sm font-semibold uppercase tracking-[0.2em] text-[rgb(var(--brand-accent))]">
+          Ready to elevate your event?
+        </p>
+        <h2 class="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">
+          Let's make it happen
+        </h2>
+        <p class="mt-4 text-base leading-7 text-[rgb(var(--fg))]/75 sm:text-lg">
+          Browse our packages to find the right fit, or reach out directly to start planning your event.
+        </p>
+
+        <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            href="/pricing"
+            class="rounded-full border-2 border-[rgb(var(--brand-primary))] px-8 py-3 text-sm font-semibold uppercase tracking-[0.15em] text-[rgb(var(--brand-primary))] transition hover:bg-[rgb(var(--brand-primary))] hover:text-white"
+          >
+            Browse Pricing
+          </a>
+          <a
+            href="/book"
+            class="rounded-full bg-[rgb(var(--brand-accent))] px-8 py-3 text-sm font-semibold uppercase tracking-[0.15em] text-white transition hover:opacity-90"
+          >
+            Submit an Inquiry
+          </a>
+        </div>
+      </div>
   </div>
+</section>
+
+<!-- CALL TO ACTION -->
+<section class="bg-[rgb(var(--bg))] text-[rgb(var(--fg))]">
+  
 </section>
 
 <!-- Next section spacer (optional)
