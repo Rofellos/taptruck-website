@@ -108,7 +108,7 @@
   const faqs = [
     {
       q: "What is Tap Truck Vancouver Island?",
-      a: "Tap Truck Vancouver Island is a vintage 1932 mobile bar tap truck available for hire at weddings, private events, and corporate functions across Victoria BC and all of Vancouver Island. The truck is a fully restored vintage vehicle with a custom wood-panelled tap bar serving craft beer, cider, wine, cocktails, and non-alcoholic options on tap — delivered directly to your event."
+      a: "Tap Truck Vancouver Island is a vintage 1932 mobile bar tap truck available for hire at weddings, private events, and corporate functions across Vancouver Island and the Vancouver's Lower Mainland. The truck is a fully restored vintage vehicle with a custom wood-panelled draught bar serving craft beer, cider, wine, cocktails, and non-alcoholic options on tap - delivered directly to your event."
     },
     {
       q: "What areas does Tap Truck VI serve?",
@@ -120,19 +120,19 @@
     },
     {
       q: "How much does it cost to hire Tap Truck VI?",
-      a: "Wedding packages start at $1,800 + GST for up to 4 hours of service. Private event packages start at $800 + GST for up to 2 hours. Our most popular wedding package — the Tap Truck Signature — is $2,400 + GST and includes 6 hours, four tap beverages, and two licensed bartenders. See our pricing page for full details."
+      a: "Wedding packages start at $1,800 + GST for up to 4 hours of service. Private event packages start at $800 + GST for up to 2 hours. Our most popular wedding package - the Tap Truck Signature - is $2,400 + GST and includes 6 hours, four tap beverages, and two licensed bartenders. See our pricing page for full details."
     },
     {
       q: "Does Tap Truck VI require a liquor permit?",
-      a: "Most private events in BC require a Special Event Permit (SEP). We can manage the entire liquor permitting process on your behalf as an add-on service — we handle the SEP application so it's one less thing on your plate."
+      a: "Most private events in BC require a Special Event Permit (SEP). We can manage the entire liquor permitting process on your behalf as an add-on service - we handle the SEP application so it's one less thing on your plate."
     },
     {
       q: "How far in advance should I book?",
-      a: "As early as possible — especially for summer dates on Vancouver Island. Popular weekends from May through September fill up fast. For weddings, 6 to 12 months in advance is ideal to secure your preferred date."
+      a: "As early as possible - especially for summer dates on Vancouver Island. Popular weekends from May through September fill up fast. For weddings, 6 to 12 months in advance is ideal to secure your preferred date. We recommend applying for liquor licensing at least 4 to 6 weeks ahead of any event you would like to serve alcohol at. (excluding private property)"
     },
     {
       q: "What is the vintage truck at Tap Truck VI?",
-      a: "The truck is a custom-built 1932 Chevrolet that has been fully restored and converted into a mobile bar, complete with a custom wood-panelled tap bar and multiple tap handles. It's a genuine conversation piece — guests love gathering around it."
+      a: "The truck is a custom-built 1932 Chevrolet that has been fully restored and converted into a mobile bar, complete with a custom wood-panelled tap bar and multiple tap handles. It's a genuine conversation piece - guests love gathering around it."
     },
     {
       q: "Can Tap Truck VI come to a backyard or private property?",
@@ -140,11 +140,15 @@
     },
     {
       q: "Does Tap Truck VI need power or water hookups?",
-      a: "No. We're fully self-contained. We bring all tap equipment, ice, keg cooling, bar tools, and serving essentials — no external power or water hookups required."
+      a: "No. We're fully self-contained. We bring all tap equipment, ice, keg cooling, bar tools, and serving essentials - no external power or water hookups required."
     },
     {
       q: "How do I book Tap Truck VI for my event?",
-      a: "Submit a booking inquiry through our Book page. Share your event date, location, approximate guest count, and what you're envisioning — we'll get back to you quickly to confirm availability and find the right package."
+      a: "Submit a booking inquiry through our Book page. Share your event date, location, approximate guest count, and what you're envisioning - we'll get back to you quickly to confirm availability and find the right package."
+    },
+    {
+      q: "Do you provide the alcohol?",
+      a: "Package prices include service only. The person named on the SEP will be required to purchase alcohol. If you would like us to handle the permitting, just let us know. Alcohol cost will be quoted in addition to the selected service package."
     }
   ];
 </script>
