@@ -1,9 +1,12 @@
 <svelte:head>
-  <title>About | Tap Truck VI</title>
+  <title>About Tap Truck VI | Vintage Mobile Bar Vancouver Island</title>
   <meta
     name="description"
-    content="Learn more about Tap Truck VI, our story, and what we bring to events across Vancouver Island."
+    content="Meet the team behind Tap Truck Vancouver Island — a vintage 1932 mobile bar tap truck serving weddings, private events, and corporate functions across Victoria BC and Vancouver Island."
   />
+  <meta property="og:title" content="About Tap Truck VI | Vintage Mobile Bar Vancouver Island" />
+  <meta property="og:description" content="The story behind Vancouver Island's favourite vintage tap truck mobile bar." />
+  <link rel="canonical" href="https://taptruckvi.ca/about" />
 </svelte:head>
 
 <script lang="ts">
@@ -44,9 +47,10 @@
     </div>
 
     <!-- Full-width heading -->
-    <h1 class="text-4xl font-bold text-center tracking-tight sm:text-5xl lg:text-6xl mb-10">
+    <h1 class="sr-only">Mobile Bar Tap Truck for Weddings and Events | Tap Truck Vancouver Island</h1>
+    <p class="text-4xl font-bold text-center tracking-tight sm:text-5xl lg:text-6xl mb-10" aria-hidden="true">
       More Than a Bar Setup
-    </h1>
+    </p>
 
     <!-- Desktop: text left (full width), image floated right -->
     <div class="relative">

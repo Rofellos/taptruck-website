@@ -4,8 +4,83 @@
 
 <svelte:head>
 	<link rel="preload" as="image" href="/Truck_on_grass.jpg" />
-    <title>Tap Truck VI | Mobile Bar Victoria & Vancouver</title>
-    <meta name="description" content="Mobile tap trucks and beverage rentals for weddings, corporate events, and private parties across Victoria and Vancouver" />
+	<title>Tap Truck VI | Mobile Bar Victoria BC | Weddings & Events Vancouver Island</title>
+	<meta name="description" content="Vancouver Island's vintage mobile bar tap truck. Available for weddings, private events, and corporate functions across Victoria, Nanaimo, Cowichan Valley and beyond. Bar service made easy." />
+	<meta name="keywords" content="mobile bar Victoria BC, tap truck Vancouver Island, mobile bartending Victoria, wedding bar service Vancouver Island, mobile bar rental Victoria, tap truck wedding Victoria BC" />
+	<meta property="og:title" content="Tap Truck VI | Mobile Bar Victoria BC" />
+	<meta property="og:description" content="Vancouver Island's vintage mobile bar tap truck for weddings, private events, and corporate functions across Victoria BC and beyond." />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://taptruckvi.ca" />
+	<meta property="og:image" content="https://taptruckvi.ca/Truck_on_grass.jpg" />
+	<link rel="canonical" href="https://taptruckvi.ca" />
+	<!-- LocalBusiness Schema Markup -->
+	<script type="application/ld+json">
+	{
+		"@context": "https://schema.org",
+		"@type": "LocalBusiness",
+		"name": "Tap Truck Vancouver Island",
+		"alternateName": "Tap Truck VI",
+		"description": "Vancouver Island's vintage mobile bar tap truck available for weddings, private events, and corporate functions across Victoria BC, Nanaimo, Cowichan Valley and all of Vancouver Island.",
+		"url": "https://taptruckvi.ca",
+		"telephone": "4373500049",
+		"image": "https://taptruckvi.ca/Truck_on_grass.jpg",
+		"logo": "https://taptruckvi.ca/badge_final.png",
+		"priceRange": "$$",
+		"areaServed": [
+			{"@type": "City", "name": "Victoria", "addressRegion": "BC", "addressCountry": "CA"},
+			{"@type": "City", "name": "Nanaimo", "addressRegion": "BC", "addressCountry": "CA"},
+			{"@type": "City", "name": "Duncan", "addressRegion": "BC", "addressCountry": "CA"},
+			{"@type": "City", "name": "Langford", "addressRegion": "BC", "addressCountry": "CA"},
+			{"@type": "City", "name": "Saanich", "addressRegion": "BC", "addressCountry": "CA"},
+			{"@type": "City", "name": "Sidney", "addressRegion": "BC", "addressCountry": "CA"},
+			{"@type": "City", "name": "Comox", "addressRegion": "BC", "addressCountry": "CA"},
+      {"@type": "City", "name": "Courtenay", "addressRegion": "BC", "addressCountry": "CA"},
+			{"@type": "City", "name": "Campbell River", "addressRegion": "BC", "addressCountry": "CA"},
+			{"@type": "City", "name": "Salt Spring Island", "addressRegion": "BC", "addressCountry": "CA"},
+			{"@type": "City", "name": "Quadra Island", "addressRegion": "BC", "addressCountry": "CA"},
+      {"@type": "City", "name": "Saturna Island", "addressRegion": "BC", "addressCountry": "CA"},
+      {"@type": "City", "name": "Cowichan Valley", "addressRegion": "BC", "addressCountry": "CA"},
+      {"@type": "City", "name": "Galiano Island", "addressRegion": "BC", "addressCountry": "CA"},
+      {"@type": "City", "name": "Ladysmith", "addressRegion": "BC", "addressCountry": "CA"},
+      {"@type": "City", "name": "Tofino", "addressRegion": "BC", "addressCountry": "CA"},
+      {"@type": "City", "name": "Shawnigan Lake", "addressRegion": "BC", "addressCountry": "CA"},
+      {"@type": "City", "name": "Sooke", "addressRegion": "BC", "addressCountry": "CA"},
+      {"@type": "City", "name": "Port Renfrew", "addressRegion": "BC", "addressCountry": "CA"},
+      {"@type": "City", "name": "Ladysmith", "addressRegion": "BC", "addressCountry": "CA"},
+      {"@type": "City", "name": "Qualicum Beach", "addressRegion": "BC", "addressCountry": "CA"},
+      {"@type": "City", "name": "Parksville", "addressRegion": "BC", "addressCountry": "CA"},
+      {"@type": "City", "name": "Cowichan Lake", "addressRegion": "BC", "addressCountry": "CA"},
+      {"@type": "City", "name": "Vancouver", "addressRegion": "BC", "addressCountry": "CA"},
+			{"@type": "City", "name": "Langley", "addressRegion": "BC", "addressCountry": "CA"},
+			{"@type": "City", "name": "Richmond", "addressRegion": "BC", "addressCountry": "CA"},
+			{"@type": "City", "name": "Surrey", "addressRegion": "BC", "addressCountry": "CA"},
+			{"@type": "City", "name": "North Vancouver", "addressRegion": "BC", "addressCountry": "CA"},
+			{"@type": "City", "name": "West Vancouver", "addressRegion": "BC", "addressCountry": "CA"},
+			{"@type": "City", "name": "Coquitlam", "addressRegion": "BC", "addressCountry": "CA"},
+      {"@type": "City", "name": "Abbotsford", "addressRegion": "BC", "addressCountry": "CA"},
+      {"@type": "City", "name": "Maple Ridge", "addressRegion": "BC", "addressCountry": "CA"},
+      {"@type": "City", "name": "Coquitlam", "addressRegion": "BC", "addressCountry": "CA"},
+      {"@type": "City", "name": "Bowen Island", "addressRegion": "BC", "addressCountry": "CA"},
+			{"@type": "AdministrativeArea", "name": "Vancouver Island", "addressRegion": "BC", "addressCountry": "CA"}
+		],
+		"serviceType": [
+			"Mobile Bar Service",
+			"Tap Truck Rental",
+			"Wedding Bar Service",
+			"Corporate Event Bar",
+			"Private Event Bar",
+			"Mobile Bartending",
+      "Event Bartending",
+      "Draught Truck",
+      "Draught Service",
+      "Party Truck",
+      "Mobile Bar Victoria"
+		],
+		"sameAs": [
+			"https://www.instagram.com/taptruckvi"
+		]
+	}
+	</script>
 </svelte:head>
 
 <GiveawayPopup />
@@ -16,7 +91,7 @@
 <section class="relative h-[360px] overflow-hidden sm:hidden">
 	<img
 		src="/Truck_on_grass.jpg"
-		alt="Tap Truck at an event"
+		alt="Tap Truck Vancouver Island vintage mobile bar tap truck for weddings and events in Victoria BC"
 		class="h-full w-full object-cover object-[50%_65%]"
 	/>
 	<div class="absolute inset-0 bg-black/10"></div>
@@ -24,9 +99,10 @@
 </section>
 <section class="text-center bg-[rgb(var(--bg))] px-5 pt-6 text-[rgb(var(--fg))] sm:hidden">
 	<div class="mx-auto max-w-md">
-		<h1 class="text-4xl font-extrabold tracking-tight">
+		<h1 class="sr-only">Mobile Bar Service for Victoria BC and Vancouver Island | Tap Truck VI</h1>
+		<p class="text-4xl font-extrabold tracking-tight" aria-hidden="true">
 			A Bar Worth<br />Gathering Around.
-		</h1>
+		</p>
 	</div>
 </section>
 
@@ -35,7 +111,7 @@
 <section class="relative hidden w-full overflow-hidden sm:block sm:min-h-[52vh] md:min-h-[80vh] lg:min-h-[90vh]">
 	<img
 		src="/Truck_on_grass.jpg"
-		alt="Tap Truck at an event"
+		alt="Tap Truck Vancouver Island vintage mobile bar tap truck for weddings and events in Victoria BC"
 		loading="eager"
 		fetchpriority="high"
 		class="absolute inset-0 h-full w-full object-cover sm:object-[30%_20%] lg:object-[center_55%]"
@@ -45,9 +121,9 @@
 
 	<div class="relative mx-auto flex max-w-6xl items-start px-4 py-24 md:py-56 md:min-h-[60vh] lg:min-h-[60vh]">
 		<div class="max-w-lg pt-8">
-			<h1 class="text-5xl lg:text-6xl font-extrabold tracking-tight text-white">
-				A Bar Worth <br> Gathering Around.
-			</h1>
+			<p class="text-5xl lg:text-6xl font-extrabold tracking-tight text-white" aria-hidden="true">
+					A Bar Worth <br> Gathering Around.
+				</p>
 		</div>
 	</div>
 </section>
