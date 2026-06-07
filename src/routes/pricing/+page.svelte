@@ -103,7 +103,7 @@
 	];
 
 	type AddOnGroup = 
-		| { category: string; permitting?: false; items: { label: string; detail: string }[] }
+		| { category: string; permitting?: false; note?: string; items: { label: string; detail: string }[] }
 		| { category: string; permitting: true; description: string };
 
 	const addOns: AddOnGroup[] = [
@@ -118,11 +118,12 @@
 		},
 		{
 			category: 'Beverages',
+			note: 'You supply the beverages — these are the services we layer on top.',
 			items: [
-				{ label: 'Tap cocktails or mocktails', detail: '$100/tap (20L keg)' },
+				{ label: 'Extra tap line', detail: '$100/line - for your additional keg, cider, or kombucha' },
+				{ label: 'Cocktails or mocktails on tap', detail: 'We build & pour batch cocktails from what you provide' },
 				{ label: 'Prosecco on tap', detail: 'Available on Signature & Premium' },
-				{ label: 'Non-alcoholic tap options', detail: 'Kombucha, craft soda, sparkling water' },
-				{ label: 'Custom signature drink', detail: 'Named cocktail for your event' }
+				{ label: 'Custom signature drink', detail: 'We design & name a cocktail for your event' }
 			]
 		},
 		{
@@ -142,18 +143,106 @@
 	];
 
 	$: packages = selected === 'wedding' ? weddingPackages : selected === 'private' ? privatePackages : [];
+
+	// All packages, used for the crawler-readable block and schema.
+	const allPackages: { group: string; pkgs: Package[] }[] = [
+		{ group: 'Wedding Packages', pkgs: weddingPackages },
+		{ group: 'Private Event Packages', pkgs: privatePackages }
+	];
+
+	// Strip "$1,800 + GST" -> "1800.00" for schema price field.
+	function priceValue(price: string): string {
+		const num = price.replace(/[^0-9.]/g, '');
+		return num ? Number(num).toFixed(2) : '';
+	}
+
+	// schema.org structured data so AI/search can parse prices + inclusions.
+	const offerSchema = {
+		'@context': 'https://schema.org',
+		'@type': 'Service',
+		name: 'Tap Truck VI — Mobile Tap & Bar Service',
+		serviceType: 'Mobile bartending and tap truck service',
+		areaServed: 'Greater Victoria, Vancouver Island, BC',
+		provider: {
+			'@type': 'LocalBusiness',
+			name: 'Tap Truck Vancouver Island Inc.',
+			url: 'https://www.taptruckvi.ca'
+		},
+		hasOfferCatalog: {
+			'@type': 'OfferCatalog',
+			name: 'Event Packages',
+			itemListElement: allPackages.flatMap((g) =>
+				g.pkgs.map((p) => ({
+					'@type': 'Offer',
+					name: p.name,
+					description: `${p.snippet} Includes: ${p.items.join('; ')}.`,
+					category: g.group,
+					price: priceValue(p.price),
+					priceCurrency: 'CAD',
+					eligibleRegion: 'Greater Victoria, BC',
+					priceSpecification: {
+						'@type': 'PriceSpecification',
+						price: priceValue(p.price),
+						priceCurrency: 'CAD',
+						valueAddedTaxIncluded: false
+					}
+				}))
+			)
+		}
+	};
 </script>
 
 <svelte:head>
 	<title>Pricing | Tap Truck Vancouver Island</title>
 	<meta
 		name="description"
-		content="View Tap Truck VI wedding and private event package options."
+		content="Tap Truck VI pricing: wedding packages from $1,800 and private event packages from $800 (+GST). Mobile tap truck & bartending service across Greater Victoria and Vancouver Island. You supply the beverages; we bring the truck, taps, and licensed bartenders."
 	/>
+	{@html `<script type="application/ld+json">${JSON.stringify(offerSchema)}<\/script>`}
 </svelte:head>
 
 <section class="bg-bg text-fg">
 	<div class="mx-auto max-w-7xl px-4 pt-36 pb-20">
+
+		<!--
+			Crawler / AI-readable package data. Visually hidden (sr-only) but always
+			present in the static HTML, so search engines, AI assistants, and screen
+			readers receive full pricing and inclusions without any interaction.
+			The visible interactive cards below are unchanged for sighted users.
+		-->
+		<div class="sr-only">
+			<h2>Tap Truck VI Pricing</h2>
+			<p>
+				Mobile tap truck and bartending service for weddings and private events
+				across Greater Victoria and Vancouver Island, BC. Clients supply their own
+				beverages; Tap Truck VI provides the truck, tap system, equipment, and
+				licensed bartenders. Prices below are in Canadian dollars and exclude GST.
+				Travel within Greater Victoria is included.
+			</p>
+			{#each allPackages as group}
+				<h3>{group.group}</h3>
+				<ul>
+					{#each group.pkgs as pkg}
+						<li>
+							<strong>{pkg.name}</strong> — {pkg.price}. {pkg.snippet} Includes:
+							{pkg.items.join('; ')}.
+						</li>
+					{/each}
+				</ul>
+			{/each}
+			<h3>Add-ons and extras</h3>
+			<ul>
+				{#each addOns as group}
+					{#if group.permitting}
+						<li><strong>{group.category}:</strong> {group.description}</li>
+					{:else}
+						{#each group.items as item}
+							<li><strong>{item.label}:</strong> {item.detail}</li>
+						{/each}
+					{/if}
+				{/each}
+			</ul>
+		</div>
 
 		<!-- Header -->
 		<div class="mx-auto max-w-3xl text-center">
@@ -168,6 +257,26 @@
 			</p>
 			<p class="mt-4 text-sm leading-6 text-fg/55">
 				All packages include travel within Greater Victoria. Events outside this area may be subject to additional travel fees.
+			</p>
+		</div>
+
+		<!-- How it works / dry-hire benefit band -->
+		<div class="mx-auto mt-12 max-w-3xl rounded-3xl border border-[rgb(var(--brand-accent))]/25 bg-[rgb(var(--brand-secondary))]/15 px-6 py-8 text-center sm:px-10">
+			<p class="text-sm font-semibold uppercase tracking-[0.2em] text-[rgb(var(--brand-accent))]">
+				You bring the drinks, we bring the bar
+			</p>
+			<h2 class="mt-3 text-2xl font-bold tracking-tight sm:text-3xl">
+				Buy exactly what you love - no markup
+			</h2>
+			<p class="mx-auto mt-4 max-w-2xl text-base leading-7 text-fg/75">
+				You supply your own beverages, so you choose every beer, cider, wine, and mixer
+				on tap - and pay store prices, not bar prices. In BC you can stock up at the liquor
+				store and return what you don't open, so nothing goes to waste. We bring the 1932
+				tap truck, the full tap system, the gear, and your licensed bartenders to pour it all.
+			</p>
+			<p class="mx-auto mt-4 max-w-2xl text-sm leading-6 text-fg/60">
+				Not sure how much to buy or how the permit works? We'll guide you through it — and we
+				can handle the Special Event Permit for you as an add-on.
 			</p>
 		</div>
 
@@ -312,6 +421,9 @@
 						{#if group.permitting}
 							<p class="text-sm leading-6 text-fg/70">{group.description}</p>
 						{:else}
+							{#if group.note}
+								<p class="mb-4 text-xs italic leading-5 text-fg/55">{group.note}</p>
+							{/if}
 							<ul class="space-y-4">
 								{#each group.items as item}
 									<li class="border-b border-fg/8 pb-4 last:border-0 last:pb-0">

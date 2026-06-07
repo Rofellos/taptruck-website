@@ -1,111 +1,8 @@
-<svelte:head>
-  <title>FAQ | Mobile Bar Victoria BC | Tap Truck Vancouver Island</title>
-  <meta
-    name="description"
-    content="Frequently asked questions about Tap Truck VI — Vancouver Island's mobile bar tap truck. How it works, what's on tap, service areas, pricing, and booking for weddings and events in Victoria BC."
-  />
-  <meta property="og:title" content="FAQ | Tap Truck Vancouver Island Mobile Bar" />
-  <meta property="og:description" content="Everything you need to know about booking a mobile bar tap truck for your Victoria BC wedding or event." />
-  <link rel="canonical" href="https://taptruckvi.ca/faq" />
-  <!-- FAQ Schema Markup for Google rich results and AI search -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "What is Tap Truck Vancouver Island?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Tap Truck Vancouver Island is a vintage 1932 mobile bar tap truck available for hire at weddings, private events, and corporate functions across Victoria BC and Vancouver Island. The truck is a fully restored vintage vehicle with a custom wood-panelled tap bar serving craft beer, cider, wine, cocktails, and non-alcoholic options on tap directly at your event."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What areas does Tap Truck VI serve?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Tap Truck Vancouver Island serves all of Vancouver Island including Victoria, Saanich, Langford, Oak Bay, Esquimalt, Sidney, Sooke, Duncan, Cowichan Valley, Nanaimo, Parksville, Comox, and Courtenay. Travel within Greater Victoria is included in all packages. Events outside Greater Victoria are subject to a per-kilometre travel fee quoted on request."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What drinks can go on tap?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Tap Truck VI can serve craft beer, cider, wine, Prosecco, cocktails, mocktails, kombucha, craft soda, and sparkling water on tap. We love showcasing Vancouver Island craft beverages and can work with local breweries and producers. Custom signature cocktails named after your event are also available as an add-on."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How much does it cost to hire Tap Truck VI?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Wedding packages start at $1,800 + GST for up to 4 hours of service. Private event packages start at $800 + GST for up to 2 hours. The most popular wedding package is the Tap Truck Signature at $2,400 + GST which includes 6 hours, four tap beverages, and two licensed bartenders. Visit our pricing page for full package details."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Does Tap Truck VI require a liquor permit?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Most private events in BC require a Special Event Permit (SEP). Tap Truck VI can manage the entire liquor permitting process on your behalf as an add-on service, so you don't have to deal with the paperwork. We handle the SEP application using our names so it's one less thing for you to worry about."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How far in advance should I book?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "We recommend booking as early as possible, especially for summer weddings and events on Vancouver Island. Popular dates — particularly weekends from May through September — fill up quickly. Reaching out 6 to 12 months in advance for a wedding is ideal to secure your preferred date."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What is the vintage truck at Tap Truck VI?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "The Tap Truck is a custom-built 1932 Chevrolet that has been fully restored and converted into a mobile bar. It features a custom wood-panelled tap bar on the flatbed with multiple tap handles. The truck is a genuine conversation piece and a standout feature at any event — guests love gathering around it."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Can Tap Truck VI come to my backyard or private property?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes. Tap Truck VI is fully mobile and can come to private properties, backyards, farms, vineyards, and any accessible outdoor or indoor location on Vancouver Island. We just need enough clearance for the truck to access the site. Contact us with your venue details and we can confirm access requirements."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Does Tap Truck VI need power or water hookups?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "No. Tap Truck VI is fully self-contained and does not require external power or water hookups. We bring everything needed for a complete mobile bar setup including all tap equipment, ice, cooling for kegs, bar tools, and serving essentials."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How do I book Tap Truck VI for my event?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "You can submit a booking inquiry through the Book page on our website at taptruckvi.ca/book. Provide your event date, location, approximate guest count, and any details about what you're looking for. We'll get back to you promptly to confirm availability and discuss the right package for your event."
-        }
-      }
-    ]
-  }
-  </script>
-</svelte:head>
-
-<script lang="ts">
-  let openIndex: number | null = null;
-
-  function toggle(i: number) {
-    openIndex = openIndex === i ? null : i;
-  }
-
-  const faqs = [
+<script lang="ts" context="module">
+  // Single source of truth for all FAQ content. The visible accordion and the
+  // FAQPage JSON-LD schema are both generated from this array, so they can
+  // never drift out of sync.
+  export const faqs = [
     {
       q: "What is Tap Truck Vancouver Island?",
       a: "Tap Truck Vancouver Island is a vintage 1932 mobile bar tap truck available for hire at weddings, private events, and corporate functions across Vancouver Island and the Vancouver's Lower Mainland. The truck is a fully restored vintage vehicle with a custom wood-panelled draught bar serving craft beer, cider, wine, cocktails, and non-alcoholic options on tap - delivered directly to your event."
@@ -120,11 +17,11 @@
     },
     {
       q: "How much does it cost to hire Tap Truck VI?",
-      a: "Wedding packages start at $1,800 + GST for up to 4 hours of service. Private event packages start at $800 + GST for up to 2 hours. Our most popular wedding package - the Tap Truck Signature - is $2,400 + GST and includes 6 hours, four tap beverages, and two licensed bartenders. See our pricing page for full details."
+      a: "Wedding packages start at \$1,800 + GST for up to 4 hours of service. Private event packages start at \$800 + GST for up to 2 hours. Our most popular wedding package - the Tap Truck Signature - is \$2,400 + GST and includes 6 hours, four tap beverages, and two licensed bartenders. See our pricing page for full details."
     },
     {
       q: "Does Tap Truck VI require a liquor permit?",
-      a: "Most private events in BC require a Special Event Permit (SEP). We can manage the entire liquor permitting process on your behalf as an add-on service - we handle the SEP application so it's one less thing on your plate."
+      a: "Most private events in BC require a Special Event Permit (SEP). We can manage the entire liquor permitting process on your behalf as an add-on service - we handle the SEP application so it's one less thing on your plate. Note: The SEP holder is responsible for the purchase of alcohol, so in this case we would provide alcohol and include this to your event invoice."
     },
     {
       q: "How far in advance should I book?",
@@ -148,10 +45,42 @@
     },
     {
       q: "Do you provide the alcohol?",
-      a: "Package prices include service only. The person named on the SEP will be required to purchase alcohol. If you would like us to handle the permitting, just let us know. Alcohol cost will be quoted in addition to the selected service package."
+      a: "Package prices include service only. Clients supply their own beverages, which means you can buy exactly what you love and return what you don't, with no markup. The person named on the Special Event Permit (SEP) is required to purchase the alcohol. If you'd like us to handle the permitting, just let us know - alcohol cost is separate from the selected service package."
     }
   ];
+
+  // Build FAQPage schema from the same array used for the visible accordion.
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: f.a }
+    }))
+  };
 </script>
+
+<script lang="ts">
+  let openIndex: number | null = null;
+
+  function toggle(i: number) {
+    openIndex = openIndex === i ? null : i;
+  }
+</script>
+
+<svelte:head>
+  <title>FAQ | Mobile Bar Victoria BC | Tap Truck Vancouver Island</title>
+  <meta
+    name="description"
+    content="Frequently asked questions about Tap Truck VI — Vancouver Island's mobile bar tap truck. How it works, what's on tap, service areas, pricing, and booking for weddings and events in Victoria BC."
+  />
+  <meta property="og:title" content="FAQ | Tap Truck Vancouver Island Mobile Bar" />
+  <meta property="og:description" content="Everything you need to know about booking a mobile bar tap truck for your Victoria BC wedding or event." />
+  <link rel="canonical" href="https://taptruckvi.ca/faq" />
+  <!-- FAQPage schema, generated from the faqs array so it always matches the visible content -->
+  {@html `<script type="application/ld+json">${JSON.stringify(faqSchema)}<\/script>`}
+</svelte:head>
 
 <section class="bg-bg text-fg">
   <div class="mx-auto max-w-4xl px-4 pt-36 pb-20">
@@ -175,15 +104,23 @@
             type="button"
             class="w-full flex items-center justify-between px-6 py-5 text-left font-semibold text-[rgb(var(--brand-primary))] hover:bg-fg/5 transition"
             on:click={() => toggle(i)}
+            aria-expanded={openIndex === i}
+            aria-controls={`faq-answer-${i}`}
           >
             <span>{faq.q}</span>
             <span class="ml-4 shrink-0 text-[rgb(var(--brand-accent))] transition-transform duration-200 {openIndex === i ? 'rotate-180' : ''}">↓</span>
           </button>
-          {#if openIndex === i}
-            <div class="px-6 pt-2 pb-5 text-sm leading-7 text-fg/75">
-              {faq.a}
-            </div>
-          {/if}
+          <!--
+            The answer is ALWAYS rendered in the HTML (present for crawlers, AI,
+            and screen readers). The accordion only toggles its visibility via a
+            CSS class - it is never removed from the DOM.
+          -->
+          <div
+            id={`faq-answer-${i}`}
+            class="px-6 text-sm leading-7 text-fg/75 overflow-hidden transition-all duration-200 {openIndex === i ? 'max-h-[40rem] pt-2 pb-5 opacity-100' : 'max-h-0 pt-0 pb-0 opacity-0'}"
+          >
+            {faq.a}
+          </div>
         </div>
       {/each}
     </div>

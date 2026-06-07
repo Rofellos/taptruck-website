@@ -1,5 +1,10 @@
 import { fail } from '@sveltejs/kit';
 import type { Actions } from './$types';
+
+// This route uses a form action (live server needed), so it cannot be
+// prerendered. Override the site-wide prerender setting from +layout.ts.
+export const prerender = false;
+
 import { Resend } from 'resend';
 import {
   TURNSTILE_SECRET_KEY,
