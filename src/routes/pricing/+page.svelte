@@ -269,10 +269,7 @@
 				Buy exactly what you love - no markup
 			</h2>
 			<p class="mx-auto mt-4 max-w-2xl text-base leading-7 text-fg/75">
-				You supply your own beverages, so you choose every beer, cider, wine, and mixer
-				on tap - and pay store prices, not bar prices. In BC you can stock up at the liquor
-				store and return what you don't open, so nothing goes to waste. We bring the 1932
-				tap truck, the full tap system, the gear, and your licensed bartenders to pour it all.
+				You supply your own kegs, so you choose every pouring from the taps — and pay keg prices, not bar prices. In BC you can order kegs through the liquor store, and we bring the 1932 tap truck, the full tap system, the gear, and your licensed bartenders to pour it all.
 			</p>
 			<p class="mx-auto mt-4 max-w-2xl text-sm leading-6 text-fg/60">
 				Not sure how much to buy or how the permit works? We'll guide you through it — and we
