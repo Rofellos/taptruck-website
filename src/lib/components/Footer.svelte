@@ -130,7 +130,7 @@ import { trackEvent } from '$lib/utils/analytics';
 			{/if}
 			<!-- PRIVACY POLICY LINK -->
 			<a
-			href="https://instagram.com/taptruckvi"
+			href="https://taptruckvi.ca/privacy"
 			target="_blank"
 			rel="noopener noreferrer"
 			class="mt-3 flex items-center gap-3 text-fg/80 transition hover:text-[rgb(var(--brand-accent))]"
