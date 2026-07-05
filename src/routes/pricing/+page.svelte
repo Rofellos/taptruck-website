@@ -110,19 +110,19 @@
 		{
 			category: 'Time & Logistics',
 			items: [
-				{ label: 'Additional service hours', detail: '$125–$195/hr depending on package' },
-				{ label: 'Early setup / late breakdown', detail: 'Available on request' },
+				{ label: 'Additional service hours', detail: 'Need some more time? Tack it on!' },
+				{ label: 'Early setup / late breakdown', detail: 'Logistics issue? No problem - we can set up and break down anytime before or after an event.' },
 				{ label: 'Travel outside Greater Victoria', detail: 'Per km rate, quoted on request' },
-				{ label: 'Second bartender', detail: '$50–$65/hr' }
+				{ label: 'Additional bartender', detail: 'An additional bartender will keep the drinks flowing non-stop.' }
 			]
 		},
 		{
 			category: 'Beverages',
 			note: 'You supply the beverages — these are the services we layer on top.',
 			items: [
-				{ label: 'Extra tap line', detail: '$100/line - for your additional keg, cider, or kombucha' },
-				{ label: 'Cocktails or mocktails on tap', detail: 'We build & pour batch cocktails from what you provide' },
-				{ label: 'Prosecco on tap', detail: 'Available on Signature & Premium' },
+				{ label: 'Extra tap line', detail: 'For your additional keg, cider, or kombucha' },
+				{ label: 'Additional Tap Cocktails', detail: 'We build & pour batch cocktails with your alcohol, and garnish them' },
+				{ label: 'Prosecco on tap', detail: 'Want some bubbles? Let us know and we will have them flowing from the tap' },
 				{ label: 'Custom signature drink', detail: 'We design & name a cocktail for your event' }
 			]
 		},
