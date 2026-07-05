@@ -75,7 +75,7 @@
 		{
 			name: 'Tap Truck Lite',
 			snippet: 'A great intro to the truck experience for smaller gatherings.',
-			price: '$800 + GST',
+			price: '$900 + GST',
 			items: [
 				'Up to 2 hours of service',
 				'Full truck setup & breakdown included',
@@ -87,7 +87,7 @@
 			]
 		},
 		{
-			name: 'Tap Truck Lite Plus',
+			name: 'Tap Truck Full Pour',
 			snippet: 'More taps, more time - perfect for a proper party.',
 			price: '$1,300 + GST',
 			items: [
