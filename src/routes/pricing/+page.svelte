@@ -20,7 +20,7 @@
 		{
 			name: 'The Classic Pour',
 			snippet: 'A clean, elegant bar service for your big day.',
-			price: '$1,800 + GST',
+			price: '$1,900 + GST',
 			items: [
 				'Up to 4 hours of service',
 				'Full truck setup & breakdown included',
