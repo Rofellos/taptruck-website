@@ -1,5 +1,4 @@
 <script lang="ts">
-  import GiveawayPopup from '$lib/components/GiveawayPopup.svelte';
 </script>
 
 <svelte:head>
@@ -82,8 +81,6 @@
 	}
 	</script>
 </svelte:head>
-
-<GiveawayPopup />
 
 <!-- HERO SECTION -->
 
