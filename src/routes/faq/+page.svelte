@@ -136,10 +136,10 @@
           Contact Us
         </a>
         <a
-          href="/book"
+          href="/pricing"
           class="rounded-full bg-[rgb(var(--brand-accent))] px-8 py-3 text-sm font-semibold uppercase tracking-[0.15em] text-white transition hover:opacity-90"
         >
-          Check Your Date
+          Check Pricing & Book Now
         </a>
       </div>
     </div>

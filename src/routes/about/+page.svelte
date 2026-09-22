@@ -164,18 +164,11 @@
 
       <div class="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
         <a
-          href="/book"
+          href="/pricing"
           class="btn btn-primary w-full sm:w-auto"
         >
-          Book now
+          View Pricing & Book
         </a>
-
-        <!-- <a
-          href="/pricing"
-          class="btn btn-outline w-full sm:w-auto"
-        >
-          View pricing
-        </a> -->
       </div>
     </div>
   </div>
