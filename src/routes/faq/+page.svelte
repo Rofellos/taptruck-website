@@ -130,12 +130,6 @@
       <p class="text-fg/60 text-base">Still have questions?</p>
       <div class="mt-4 flex flex-col sm:flex-row gap-4 justify-center">
         <a
-          href="/contact"
-          class="rounded-full border-2 border-[rgb(var(--brand-primary))] px-8 py-3 text-sm font-semibold uppercase tracking-[0.15em] text-[rgb(var(--brand-primary))] transition hover:bg-[rgb(var(--brand-primary))] hover:text-white"
-        >
-          Contact Us
-        </a>
-        <a
           href="/pricing"
           class="rounded-full bg-[rgb(var(--brand-accent))] px-8 py-3 text-sm font-semibold uppercase tracking-[0.15em] text-white transition hover:opacity-90"
         >
