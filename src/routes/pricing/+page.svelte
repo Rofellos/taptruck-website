@@ -562,7 +562,7 @@
 											type="submit"
 											class="inline-flex w-full items-center justify-center rounded-2xl bg-[rgb(var(--brand-accent))] px-4 py-3 text-sm font-semibold text-white transition hover:opacity-90"
 										>
-											Request to book — {fmtMoney(calcTotal(pkg, calc[pkg.name]))} + GST
+											Submit request
 										</button>
 									</form>
 								</div>
