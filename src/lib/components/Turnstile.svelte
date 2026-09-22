@@ -23,6 +23,7 @@
     // @ts-ignore
     widgetId = window.turnstile.render(el, {
       sitekey: siteKey,
+      size: 'flexible',
       callback: (t: string) => (token = t),
       'expired-callback': () => (token = ''),
       'error-callback': () => (token = '')
@@ -37,4 +38,4 @@
   });
 </script>
 
-<div bind:this={el}></div>
+<div bind:this={el} class="w-full"></div>

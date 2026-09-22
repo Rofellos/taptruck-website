@@ -35,8 +35,7 @@
 	<div class="hidden items-center gap-6 sm:flex">
 		<a class="nav-cta" href="/about">About</a>
 		<a class="nav-cta" href="/faq">FAQ</a>
-		<a class="nav-cta" href="/pricing">Pricing</a>
-		<a class="nav-cta" href="/book">Book</a>
+		<a class="nav-cta" href="/pricing">Pricing & Booking</a>
 	</div>
 
 	<!-- Mobile menu button -->
@@ -66,12 +65,8 @@
 			FAQ
 		</a>
 
-		<a href="/pricing" on:click={() => (menuOpen = false)} class="block rounded-xl px-4 py-3 text-sm font-semibold text-white/90 hover:bg-white/10">
-			Pricing
-		</a>
-		
-		<a href="/book" on:click={() => (menuOpen = false)} class="mt-1 block rounded-xl bg-[rgb(var(--brand-secondary))] px-4 py-3 text-sm font-bold text-[rgb(var(--brand-primary))] hover:opacity-90">
-			Book now
+		<a href="/pricing" on:click={() => (menuOpen = false)} class="mt-1 block rounded-xl bg-[rgb(var(--brand-secondary))] px-4 py-3 text-sm font-bold text-[rgb(var(--brand-primary))] hover:opacity-90">
+			Pricing & Booking
 		</a>
 	</div>
 {/if}

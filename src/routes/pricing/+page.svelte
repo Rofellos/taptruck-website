@@ -1,129 +1,98 @@
 <script lang="ts">
 	import { slide } from 'svelte/transition';
+	import { enhance } from '$app/forms';
+	import { page } from '$app/stores';
+	import Turnstile from '$lib/components/Turnstile.svelte';
+	import { PUBLIC_TURNSTILE_SITE_KEY } from '$env/static/public';
+	import {
+		weddingPackages,
+		privatePackages,
+		PEAK_MULTIPLIER,
+		FREE_KM,
+		PER_KM_RATE,
+		HOUR_RATE,
+		BARTENDER_RATE,
+		TAP_LINE_RATE,
+		COCKTAIL_RATE,
+		FERRY_RATE,
+		peakOf,
+		fmtMoney,
+		isPeakDate,
+		mileageFee,
+		freshCalc,
+		calcTotal
+	} from '$lib/pricing';
+	import type { CalcState, Package } from '$lib/pricing';
 
-	let selected: 'wedding' | 'private' | null = null;
+	let selected: 'wedding' | 'private' | null = 'wedding';
 	let expandedPackage: string | null = null;
+	let calcOpen: string | null = null;
 
 	function togglePackage(name: string) {
 		expandedPackage = expandedPackage === name ? null : name;
 	}
 
-	type Package = {
-		name: string;
-		snippet: string;
-		price: string;
-		highlight?: boolean;
-		items: string[];
-	};
+	$: packages = selected === 'wedding' ? weddingPackages : selected === 'private' ? privatePackages : [];
 
-	const weddingPackages: Package[] = [
-		{
-			name: 'The Classic Pour',
-			snippet: 'A clean, elegant bar service for your big day.',
-			price: '$1,900 + GST',
-			items: [
-				'Up to 4 hours of service',
-				'Full truck setup & breakdown included',
-				'All tap equipment & dispensing hardware',
-				'Ice & cooling for kegs',
-				'Bar tools, towels & serving essentials',
-				'Basic bar setup with table + tap system',
-				'Two tap beverages',
-				'Bottled wine service',
-				'One licensed bartender'
-			]
-		},
-		{
-			name: 'Tap Truck Signature',
-			snippet: 'The most popular choice - more taps, more time, two bartenders.',
-			price: '$2,400 + GST',
-			highlight: true,
-			items: [
-				'Up to 6 hours of service',
-				'Full truck setup & breakdown included',
-				'All tap equipment & dispensing hardware',
-				'Ice & cooling for kegs',
-				'Bar tools, towels & serving essentials',
-				'Four tap beverages',
-				'Bottled wine service',
-				'Optional Prosecco on tap',
-				'Two licensed bartenders'
-			]
-		},
-		{
-			name: 'Tap Truck Premium',
-			snippet: 'The full experience - cocktails, styling, and everything taken care of.',
-			price: '$3,400 + GST',
-			items: [
-				'Up to 8 hours of service',
-				'Full truck setup & breakdown included',
-				'All tap equipment & dispensing hardware',
-				'Ice & cooling for kegs',
-				'Bar tools, towels & serving essentials',
-				'Four tap beverages',
-				'Two optional tap cocktails + garnish',
-				'Full side bar setup',
-				'Bottled wine service',
-				'Optional Prosecco on tap',
-				'Custom drink menu + styling touches',
-				'Two licensed bartenders'
-			]
-		}
+	// Grouped by category, used for the crawler-readable block and schema.
+	const packageGroups: { group: string; pkgs: Package[] }[] = [
+		{ group: 'Wedding Packages', pkgs: weddingPackages },
+		{ group: 'Private Event Packages', pkgs: privatePackages }
 	];
 
-	const privatePackages: Package[] = [
-		{
-			name: 'Tap Truck Lite',
-			snippet: 'A great intro to the truck experience for smaller gatherings.',
-			price: '$900 + GST',
-			items: [
-				'Up to 2 hours of service',
-				'Full truck setup & breakdown included',
-				'All tap equipment & dispensing hardware',
-				'Ice & cooling for kegs',
-				'Bar tools, towels & serving essentials',
-				'Two tap beverages',
-				'One licensed bartender'
-			]
-		},
-		{
-			name: 'Tap Truck Full Pour',
-			snippet: 'More taps, more time - perfect for a proper party.',
-			price: '$1,300 + GST',
-			items: [
-				'Up to 3 hours of service',
-				'Full truck setup & breakdown included',
-				'All tap equipment & dispensing hardware',
-				'Ice & cooling for kegs',
-				'Bar tools, towels & serving essentials',
-				'Four tap beverages',
-				'One licensed bartender'
-			]
-		}
-	];
-
-	type AddOnGroup = 
-		| { category: string; permitting?: false; note?: string; items: { label: string; detail: string }[] }
+	type AddOnItem = { label: string; detail: string; price?: number };
+	type AddOnGroup =
+		| { category: string; permitting?: false; note?: string; items: AddOnItem[] }
 		| { category: string; permitting: true; description: string };
 
 	const addOns: AddOnGroup[] = [
 		{
 			category: 'Time & Logistics',
 			items: [
-				{ label: 'Additional service hours', detail: 'Need some more time? Tack it on!' },
-				{ label: 'Early setup / late breakdown', detail: 'Logistics issue? No problem - we can set up and break down anytime before or after an event.' },
-				{ label: 'Travel outside Greater Victoria', detail: 'Per km rate, quoted on request' },
-				{ label: 'Additional bartender', detail: 'An additional bartender will keep the drinks flowing non-stop.' }
+				{
+					label: 'Additional service hours',
+					detail: 'Need some more time? Tack it on.',
+					price: HOUR_RATE
+				},
+				{
+					label: 'Early setup / late breakdown',
+					detail:
+						'Logistics issue? No problem - we can set up and break down anytime before or after an event.'
+				},
+				{
+					label: 'Travel outside Greater Victoria',
+					detail: `First ${FREE_KM} km from our Esquimalt base is included. $${PER_KM_RATE}/km additional, one-way.`
+				},
+				{
+					label: 'Is your event on the mainland?',
+					detail: 'No problem at all, just cover the cost of the ferry for our regular sized vehicle.',
+					price: FERRY_RATE
+				},
+				{
+					label: 'Additional bartender',
+					detail: 'An additional bartender will keep the drinks flowing non-stop.',
+					price: BARTENDER_RATE
+				}
 			]
 		},
 		{
 			category: 'Beverages',
 			note: 'You supply the beverages — these are the services we layer on top.',
 			items: [
-				{ label: 'Extra tap line', detail: 'For your additional keg, cider, or kombucha' },
-				{ label: 'Additional Tap Cocktails', detail: 'We build & pour batch cocktails with your alcohol, and garnish them' },
-				{ label: 'Prosecco on tap', detail: 'Want some bubbles? Let us know and we will have them flowing from the tap' },
-				{ label: 'Custom signature drink', detail: 'We design & name a cocktail for your event' }
+				{
+					label: 'Extra tap line',
+					detail: 'For your additional keg, cider, or kombucha (available on our 2-tap packages).',
+					price: TAP_LINE_RATE
+				},
+				{
+					label: 'Additional tap cocktail',
+					detail: 'We build, pour, and garnish a prebatched cocktail from one of your taps, including custom cocktails to match your theme.',
+					price: COCKTAIL_RATE
+				},
+				{
+					label: 'Glassware',
+					detail: 'Just let us know and we can take care of glassware rentals from start to finish.'
+				}
 			]
 		},
 		{
@@ -138,23 +107,27 @@
 		{
 			category: 'Permitting',
 			permitting: true,
-			description: "Don't want to deal with the paperwork? We've got it covered. If you'd prefer not to handle the liquor permitting for your event, we can manage the Special Event Permit (SEP) application on your behalf and use our names on the application - one less thing to worry about."
-		},
+			description:
+				"Don't want to deal with the paperwork? We've got it covered. If you'd prefer not to handle the liquor permitting for your event, we can manage the Special Event Permit (SEP) application on your behalf and use our names on the application - one less thing to worry about."
+		}
 	];
 
-	$: packages = selected === 'wedding' ? weddingPackages : selected === 'private' ? privatePackages : [];
+	// --- Price calculator + booking form state --------------------------------
+	let calc: Record<string, CalcState> = {};
+	let turnstileTokens: Record<string, string> = {};
 
-	// All packages, used for the crawler-readable block and schema.
-	const allPackages: { group: string; pkgs: Package[] }[] = [
-		{ group: 'Wedding Packages', pkgs: weddingPackages },
-		{ group: 'Private Event Packages', pkgs: privatePackages }
-	];
-
-	// Strip "$1,800 + GST" -> "1800.00" for schema price field.
-	function priceValue(price: string): string {
-		const num = price.replace(/[^0-9.]/g, '');
-		return num ? Number(num).toFixed(2) : '';
+	function ensureCalc(name: string) {
+		if (!calc[name]) {
+			calc[name] = freshCalc();
+			calc = calc;
+		}
 	}
+
+	function toggleCalc(name: string) {
+		ensureCalc(name);
+		calcOpen = calcOpen === name ? null : name;
+	}
+	// ----------------------------------------------------------------------------
 
 	// schema.org structured data so AI/search can parse prices + inclusions.
 	const offerSchema = {
@@ -171,18 +144,18 @@
 		hasOfferCatalog: {
 			'@type': 'OfferCatalog',
 			name: 'Event Packages',
-			itemListElement: allPackages.flatMap((g) =>
+			itemListElement: packageGroups.flatMap((g) =>
 				g.pkgs.map((p) => ({
 					'@type': 'Offer',
 					name: p.name,
-					description: `${p.snippet} Includes: ${p.items.join('; ')}.`,
+					description: `${p.snippet} Includes: ${p.items.join('; ')}. Peak-season rate (Fri evening-Sun, Jul-Sep): ${fmtMoney(peakOf(p.normalPrice))} + GST.`,
 					category: g.group,
-					price: priceValue(p.price),
+					price: p.normalPrice.toFixed(2),
 					priceCurrency: 'CAD',
 					eligibleRegion: 'Greater Victoria, BC',
 					priceSpecification: {
 						'@type': 'PriceSpecification',
-						price: priceValue(p.price),
+						price: p.normalPrice.toFixed(2),
 						priceCurrency: 'CAD',
 						valueAddedTaxIncluded: false
 					}
@@ -193,16 +166,16 @@
 </script>
 
 <svelte:head>
-	<title>Pricing | Tap Truck Vancouver Island</title>
+	<title>Pricing & Booking | Tap Truck Vancouver Island</title>
 	<meta
 		name="description"
-		content="Tap Truck VI pricing: wedding packages from $1,800 and private event packages from $800 (+GST). Mobile tap truck & bartending service across Greater Victoria and Vancouver Island. You supply the beverages; we bring the truck, taps, and licensed bartenders."
+		content="Tap Truck VI pricing & booking: wedding packages from $1,900 and private event packages from $762 (+GST). Peak-season rates apply Friday evening through Sunday, July-September. Build your exact quote and request to book right on this page."
 	/>
 	{@html `<script type="application/ld+json">${JSON.stringify(offerSchema)}<\/script>`}
 </svelte:head>
 
 <section class="bg-bg text-fg">
-	<div class="mx-auto max-w-7xl px-4 pt-36 pb-20">
+	<div class="mx-auto max-w-7xl px-3 sm:px-4 pt-36 pb-20">
 
 		<!--
 			Crawler / AI-readable package data. Visually hidden (sr-only) but always
@@ -217,14 +190,17 @@
 				across Greater Victoria and Vancouver Island, BC. Clients supply their own
 				beverages; Tap Truck VI provides the truck, tap system, equipment, and
 				licensed bartenders. Prices below are in Canadian dollars and exclude GST.
-				Travel within Greater Victoria is included.
+				The first {FREE_KM} km of travel from our Esquimalt base is included; ${PER_KM_RATE}/km
+				one-way applies beyond that. Peak-season pricing (a {Math.round((PEAK_MULTIPLIER - 1) * 100)}%
+				premium) applies to events Friday evening through Sunday, July through September.
 			</p>
-			{#each allPackages as group}
+			{#each packageGroups as group}
 				<h3>{group.group}</h3>
 				<ul>
 					{#each group.pkgs as pkg}
 						<li>
-							<strong>{pkg.name}</strong> — {pkg.price}. {pkg.snippet} Includes:
+							<strong>{pkg.name}</strong> — {fmtMoney(pkg.normalPrice)} + GST off-peak,
+							{fmtMoney(peakOf(pkg.normalPrice))} + GST peak season. {pkg.snippet} Includes:
 							{pkg.items.join('; ')}.
 						</li>
 					{/each}
@@ -237,7 +213,10 @@
 						<li><strong>{group.category}:</strong> {group.description}</li>
 					{:else}
 						{#each group.items as item}
-							<li><strong>{item.label}:</strong> {item.detail}</li>
+							<li>
+								<strong>{item.label}</strong>{#if item.price} — {fmtMoney(item.price)}{/if}:
+								{item.detail}
+							</li>
 						{/each}
 					{/if}
 				{/each}
@@ -247,21 +226,24 @@
 		<!-- Header -->
 		<div class="mx-auto max-w-3xl text-center">
 			<p class="text-sm font-semibold uppercase tracking-[0.2em] text-[rgb(var(--brand-accent))]">
-				Pricing
+				Pricing & Booking
 			</p>
 			<h1 class="mt-4 text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
 				Simple, transparent pricing
 			</h1>
 			<p class="mt-6 text-base leading-7 text-fg/75 sm:text-lg">
-				Select the package category that best matches your event to view starting pricing and inclusions.
+				Select the package category that best matches your event, build your exact quote, and
+				request to book — all in one place.
 			</p>
 			<p class="mt-4 text-sm leading-6 text-fg/55">
-				All packages include travel within Greater Victoria. Events outside this area may be subject to additional travel fees.
+				All packages include the first {FREE_KM} km of travel from our Esquimalt base. Peak-season
+				dates (Friday evening through Sunday, July-September) carry a
+				{Math.round((PEAK_MULTIPLIER - 1) * 100)}% seasonal rate.
 			</p>
 		</div>
 
 		<!-- How it works / dry-hire benefit band -->
-		<div class="mx-auto mt-12 max-w-3xl rounded-3xl border border-[rgb(var(--brand-accent))]/25 bg-[rgb(var(--brand-secondary))]/15 px-6 py-8 text-center sm:px-10">
+		<!-- <div class="mx-auto mt-12 max-w-3xl rounded-3xl border border-[rgb(var(--brand-accent))]/25 bg-[rgb(var(--brand-secondary))]/15 px-6 py-8 text-center sm:px-10">
 			<p class="text-sm font-semibold uppercase tracking-[0.2em] text-[rgb(var(--brand-accent))]">
 				You bring the drinks, we bring the bar
 			</p>
@@ -275,10 +257,10 @@
 				Not sure how much to buy or how the permit works? We'll guide you through it — and we
 				can handle the Special Event Permit for you as an add-on.
 			</p>
-		</div>
+		</div> -->
 
 		<!-- Toggle cards -->
-		<div class="mx-auto mt-12 grid max-w-3xl gap-4 sm:grid-cols-2">
+		<div id="choose-package" class="mx-auto mt-12 grid max-w-3xl scroll-mt-28 gap-4 sm:grid-cols-2">
 
 			<!-- Wedding card -->
 			<button
@@ -292,11 +274,11 @@
 				<div class="flex items-start justify-between gap-3">
 					<div>
 						<p class="text-sm font-semibold uppercase tracking-[0.2em] text-[rgb(var(--brand-accent))]">
-							Weddings
+							Grand & Celebratory
 						</p>
-						<h2 class="mt-3 text-2xl font-bold">Wedding Packages</h2>
+						<h2 class="mt-3 text-2xl font-bold">Large Events</h2>
 						<p class="mt-2 text-sm leading-6 text-fg/70">
-							Full-service packages designed for larger events, longer timelines, and a polished guest experience.
+							Full-service packages built for weddings, corporate events, festivals, and other large gatherings — longer timelines and a polished guest experience.
 						</p>
 					</div>
 					<span class="mt-1 shrink-0 text-lg text-[rgb(var(--brand-accent))] transition-transform duration-200 {selected === 'wedding' ? 'rotate-180' : ''}">
@@ -317,11 +299,11 @@
 				<div class="flex items-start justify-between gap-3">
 					<div>
 						<p class="text-sm font-semibold uppercase tracking-[0.2em] text-[rgb(var(--brand-accent))]">
-							Private Events
+							Relaxed & Intimate
 						</p>
-						<h2 class="mt-3 text-2xl font-bold">Private Event Packages</h2>
+						<h2 class="mt-3 text-2xl font-bold">Small Events</h2>
 						<p class="mt-2 text-sm leading-6 text-fg/70">
-							Flexible options for birthdays, backyard parties, smaller gatherings, and celebrations.
+							Flexible options for backyard parties, intimate get-togethers, birthdays, and smaller celebrations.
 						</p>
 					</div>
 					<span class="mt-1 shrink-0 text-lg text-[rgb(var(--brand-accent))] transition-transform duration-200 {selected === 'private' ? 'rotate-180' : ''}">
@@ -340,9 +322,9 @@
 					</h2>
 				</div>
 
-				<div class="grid gap-6 items-start {selected === 'wedding' ? 'lg:grid-cols-3' : 'sm:grid-cols-2 max-w-2xl mx-auto'}">
+				<div class="grid gap-6 items-start {selected === 'wedding' ? 'xl:grid-cols-3' : 'sm:grid-cols-2 max-w-2xl mx-auto'}">
 					{#each packages as pkg}
-						<article class="relative flex flex-col self-start rounded-3xl border bg-white/75 p-6 shadow-sm
+						<article class="relative flex flex-col self-start rounded-3xl border bg-white/75 p-4 sm:p-6 shadow-sm
 							{pkg.highlight ? 'border-[rgb(var(--brand-accent))] ring-1 ring-[rgb(var(--brand-accent))]/30' : 'border-fg/10'}"
 						>
 
@@ -359,7 +341,10 @@
 							<p class="min-h-[2.5rem] mt-1 text-sm leading-5 text-fg/60 italic">{pkg.snippet}</p>
 
 							<p class="mt-2 text-lg font-semibold text-[rgb(var(--brand-accent))]">
-								{pkg.price}
+								{fmtMoney(pkg.normalPrice)} + GST
+							</p>
+							<p class="text-xs text-fg/50">
+								Peak season (Fri eve-Sun, Jul-Sep): {fmtMoney(peakOf(pkg.normalPrice))} + GST
 							</p>
 
 							<!-- Inclusions dropdown toggle -->
@@ -382,13 +367,204 @@
 											</li>
 										{/each}
 									</ul>
+								</div>
+							{/if}
 
-									<a
-										href="/book"
-										class="mt-6 inline-flex w-full items-center justify-center rounded-2xl border border-[rgb(var(--brand-accent))] px-4 py-3 text-sm font-semibold text-[rgb(var(--brand-accent))] transition hover:bg-[rgb(var(--brand-accent))] hover:text-white"
+							<!-- Price calculator toggle -->
+							<button
+								type="button"
+								on:click={() => toggleCalc(pkg.name)}
+								class="mt-3 flex w-full items-center justify-between rounded-2xl border border-[rgb(var(--brand-accent))]/40 bg-[rgb(var(--brand-accent))]/10 px-4 py-3 text-sm font-semibold text-[rgb(var(--brand-accent))] transition hover:bg-[rgb(var(--brand-accent))]/20"
+							>
+								<span>Build my quote & book</span>
+								<span class="transition-transform duration-200 {calcOpen === pkg.name ? 'rotate-180' : ''}">↓</span>
+							</button>
+
+							{#if calcOpen === pkg.name && calc[pkg.name]}
+								<div transition:slide={{ duration: 250 }} class="mt-4 space-y-4 rounded-2xl border border-fg/10 bg-fg/5 p-4">
+
+									<div>
+										<label class="text-xs font-semibold uppercase tracking-wide text-fg/60" for="date-{pkg.name}">
+											Event date
+										</label>
+										<input
+											id="date-{pkg.name}"
+											type="date"
+											bind:value={calc[pkg.name].date}
+											class="mt-1 w-full rounded-xl border border-fg/15 bg-white px-3 py-2 text-sm"
+										/>
+										{#if calc[pkg.name].date}
+											<p class="mt-1 text-xs {isPeakDate(calc[pkg.name].date) ? 'font-semibold text-[rgb(var(--brand-accent))]' : 'text-fg/50'}">
+												{isPeakDate(calc[pkg.name].date)
+													? 'Peak season rate applies (Fri evening-Sun, Jul-Sep)'
+													: 'Off-peak rate applies'}
+											</p>
+										{/if}
+									</div>
+
+									{#if pkg.taps === 2}
+										<div>
+											<label class="text-xs font-semibold uppercase tracking-wide text-fg/60" for="taps-{pkg.name}">
+												Extra tap lines ({fmtMoney(TAP_LINE_RATE)} each)
+											</label>
+											<select
+												id="taps-{pkg.name}"
+												bind:value={calc[pkg.name].extraTaps}
+												class="mt-1 w-full rounded-xl border border-fg/15 bg-white px-3 py-2 text-sm"
+											>
+												<option value={0}>None (2 taps)</option>
+												<option value={1}>+1 (3 taps)</option>
+												<option value={2}>+2 (4 taps)</option>
+											</select>
+										</div>
+									{/if}
+
+									<div class="grid grid-cols-2 gap-3">
+										<div>
+											<label class="text-xs font-semibold uppercase tracking-wide text-fg/60" for="hours-{pkg.name}">
+												Extra hours:
+											</label>
+											<select
+												id="hours-{pkg.name}"
+												bind:value={calc[pkg.name].extraHours}
+												class="mt-1 w-full rounded-xl border border-fg/15 bg-white px-3 py-2 text-sm"
+											>
+												{#each [0, 1, 2, 3, 4, 5] as n}
+													<option value={n}>{n === 0 ? 'None' : n}</option>
+												{/each}
+											</select>
+										</div>
+										<div>
+											<label class="text-xs font-semibold uppercase tracking-wide text-fg/60" for="bartenders-{pkg.name}">
+												Extra bartenders:
+											</label>
+											<select
+												id="bartenders-{pkg.name}"
+												bind:value={calc[pkg.name].extraBartenders}
+												class="mt-1 w-full rounded-xl border border-fg/15 bg-white px-3 py-2 text-sm"
+											>
+												{#each [0, 1, 2, 3, 4, 5] as n}
+													<option value={n}>{n === 0 ? 'None' : n}</option>
+												{/each}
+											</select>
+										</div>
+									</div>
+
+									<label class="flex items-center gap-2 text-sm">
+										<input type="checkbox" bind:checked={calc[pkg.name].cocktail} class="h-4 w-4 rounded border-fg/30" />
+										Add a prebatched cocktail tap ({fmtMoney(COCKTAIL_RATE)})
+									</label>
+
+									<label class="flex items-center gap-2 text-sm">
+										<input type="checkbox" bind:checked={calc[pkg.name].ferry} class="h-4 w-4 rounded border-fg/30" />
+										Mainland event (ferry fee) ({fmtMoney(FERRY_RATE)} flat)
+									</label>
+
+									<div>
+										<div class="flex items-center justify-between text-xs font-semibold uppercase tracking-wide text-fg/60">
+											<label for="km-{pkg.name}">Distance from Esquimalt</label>
+											<span>{calc[pkg.name].km} km</span>
+										</div>
+										<input
+											id="km-{pkg.name}"
+											type="range"
+											min="0"
+											max="500"
+											step="5"
+											bind:value={calc[pkg.name].km}
+											class="mt-2 w-full"
+										/>
+										<p class="mt-1 text-xs text-fg/50">
+											First {FREE_KM} km included.
+											{#if calc[pkg.name].km > FREE_KM}
+												{fmtMoney(mileageFee(calc[pkg.name].km))} travel fee ({calc[pkg.name].km - FREE_KM} km beyond the free zone at ${PER_KM_RATE}/km).
+											{:else}
+												No travel fee at this distance.
+											{/if}
+										</p>
+									</div>
+
+									<div class="rounded-xl bg-[rgb(var(--brand-primary))]/10 px-4 py-3 text-center">
+										<p class="text-xs uppercase tracking-wide text-fg/55">Your estimated price</p>
+										<p class="mt-1 text-2xl font-bold text-[rgb(var(--brand-primary))]">
+											{fmtMoney(calcTotal(pkg, calc[pkg.name]))} <span class="text-sm font-normal text-fg/50">+ GST</span>
+										</p>
+									</div>
+
+									<!-- Booking request form: submits the package + calculator selections
+									     straight to our booking inbox. The server recomputes the total
+									     itself rather than trusting the hidden fields below. -->
+									<form
+										method="POST"
+										use:enhance
+										class="space-y-3 border-t border-fg/10 pt-4"
 									>
-										Book this package
-									</a>
+										<input type="hidden" name="packageName" value={pkg.name} />
+										<input type="hidden" name="date" value={calc[pkg.name].date} />
+										<input type="hidden" name="extraTaps" value={calc[pkg.name].extraTaps} />
+										<input type="hidden" name="extraHours" value={calc[pkg.name].extraHours} />
+										<input type="hidden" name="extraBartenders" value={calc[pkg.name].extraBartenders} />
+										<input type="hidden" name="cocktail" value={calc[pkg.name].cocktail ? 'yes' : 'no'} />
+										<input type="hidden" name="ferry" value={calc[pkg.name].ferry ? 'yes' : 'no'} />
+										<input type="hidden" name="km" value={calc[pkg.name].km} />
+										<input type="hidden" name="cf-turnstile-response" value={turnstileTokens[pkg.name] ?? ''} />
+
+										<!-- Honeypot — left empty by real visitors, hidden from view -->
+										<div class="hidden" aria-hidden="true">
+											<label>
+												Company
+												<input type="text" name="company" tabindex="-1" autocomplete="off" />
+											</label>
+										</div>
+
+										<p class="text-xs font-semibold uppercase tracking-wide text-fg/60">Your details</p>
+
+										<input
+											type="text"
+											name="name"
+											placeholder="Full name"
+											required
+											class="w-full rounded-xl border border-fg/15 bg-white px-3 py-2 text-sm"
+										/>
+										<input
+											type="email"
+											name="email"
+											placeholder="Email"
+											required
+											class="w-full rounded-xl border border-fg/15 bg-white px-3 py-2 text-sm"
+										/>
+										<input
+											type="tel"
+											name="phone"
+											placeholder="Phone (optional)"
+											class="w-full rounded-xl border border-fg/15 bg-white px-3 py-2 text-sm"
+										/>
+										<input
+											type="text"
+											name="location"
+											placeholder="Event location / venue (optional)"
+											class="w-full rounded-xl border border-fg/15 bg-white px-3 py-2 text-sm"
+										/>
+										<textarea
+											name="details"
+											placeholder="Anything else we should know? (optional)"
+											rows="2"
+											class="w-full rounded-xl border border-fg/15 bg-white px-3 py-2 text-sm"
+										></textarea>
+
+										<Turnstile siteKey={PUBLIC_TURNSTILE_SITE_KEY} bind:token={turnstileTokens[pkg.name]} />
+
+										{#if $page.form?.packageName === pkg.name && $page.form?.message}
+											<p class="text-sm font-medium text-red-600">{$page.form.message}</p>
+										{/if}
+
+										<button
+											type="submit"
+											class="inline-flex w-full items-center justify-center rounded-2xl bg-[rgb(var(--brand-accent))] px-4 py-3 text-sm font-semibold text-white transition hover:opacity-90"
+										>
+											Request to book — {fmtMoney(calcTotal(pkg, calc[pkg.name]))} + GST
+										</button>
+									</form>
 								</div>
 							{/if}
 						</article>
@@ -424,7 +600,9 @@
 							<ul class="space-y-4">
 								{#each group.items as item}
 									<li class="border-b border-fg/8 pb-4 last:border-0 last:pb-0">
-										<p class="text-sm font-semibold text-[rgb(var(--brand-primary))]">{item.label}</p>
+										<p class="text-sm font-semibold text-[rgb(var(--brand-primary))]">
+											{item.label}{#if item.price}{/if}
+										</p>
 										<p class="mt-0.5 text-xs text-fg/60">{item.detail}</p>
 									</li>
 								{/each}
@@ -444,13 +622,14 @@
 				Let's make your event unforgettable.
 			</h2>
 			<p class="mx-auto mt-4 max-w-xl text-base leading-7 text-white/70">
-				Not sure which package is right for you? Reach out and we'll help figure it out.
+				Not sure which package is right for you? Choose a category above, build your quote, and
+				send us your request — we'll follow up by email.
 			</p>
 			<a
-				href="/book"
+				href="#choose-package"
 				class="mt-8 inline-flex items-center justify-center gap-2 rounded-2xl bg-[rgb(var(--brand-secondary))] px-10 py-4 text-base font-bold text-[rgb(var(--brand-primary-dark))] shadow-lg transition hover:opacity-90 hover:scale-[1.02]"
 			>
-				Secure your date →
+				Choose your package →
 			</a>
 		</div>
 

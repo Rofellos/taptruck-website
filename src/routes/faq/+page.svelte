@@ -17,11 +17,11 @@
     },
     {
       q: "How much does it cost to hire Tap Truck VI?",
-      a: "Wedding packages start at \$1,800 + GST for up to 4 hours of service. Private event packages start at \$800 + GST for up to 2 hours. Our most popular wedding package - the Tap Truck Signature - is \$2,400 + GST and includes 6 hours, four tap beverages, and two licensed bartenders. See our pricing page for full details."
+      a: "Private event packages start at \$900 + GST for up to 2 hours. Wedding packages start at \$1,700 + GST for up to 4 hours of service. Our most popular wedding package - the Tap Truck Signature - is \$2,200 + GST and includes 6 hours, four tap beverages, and two licensed bartenders. See our pricing page for full details."
     },
     {
       q: "Does Tap Truck VI require a liquor permit?",
-      a: "Most private events in BC require a Special Event Permit (SEP). We can manage the entire liquor permitting process on your behalf as an add-on service - we handle the SEP application so it's one less thing on your plate. Note: The SEP holder is responsible for the purchase of alcohol, so in this case we would provide alcohol and include this to your event invoice."
+      a: "Events on private property do not require Special Event Permits. Events held at public & commercial venues in BC require a SEP. We generally recommend applying for this permit at least 2-3 weeks ahead of your event. Don't want to? As us how we can handle the SEP permitting for you!"
     },
     {
       q: "How far in advance should I book?",
@@ -41,7 +41,7 @@
     },
     {
       q: "How do I book Tap Truck VI for my event?",
-      a: "Submit a booking inquiry through our Book page. Share your event date, location, approximate guest count, and what you're envisioning - we'll get back to you quickly to confirm availability and find the right package."
+      a: 'Head to our <a href="/pricing" class="underline hover:text-[rgb(var(--brand-accent))]">pricing and booking page</a>, select your package, and fill out some additional details to get an estimate for your event. Provide your info and click submit to send us and email with your event details, and we\'ll get back to you within 24 hours to confirm availability!'
     },
     {
       q: "Do you provide the alcohol?",
@@ -119,7 +119,7 @@
             id={`faq-answer-${i}`}
             class="px-6 text-sm leading-7 text-fg/75 overflow-hidden transition-all duration-200 {openIndex === i ? 'max-h-[40rem] pt-2 pb-5 opacity-100' : 'max-h-0 pt-0 pb-0 opacity-0'}"
           >
-            {faq.a}
+            {@html faq.a}
           </div>
         </div>
       {/each}
