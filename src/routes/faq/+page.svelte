@@ -150,11 +150,5 @@
     <p class="mt-4 text-white/70 text-base leading-7 max-w-2xl mx-auto">
       Tap Truck VI serves Victoria to Campbell River, and everywhere in between. If you're on Vancouver Island, we can be there. <br><br>Feel free to reach out for inquiries on the Lower Mainland as well!
     </p>
-    <a
-      href="/book"
-      class="mt-8 inline-flex items-center justify-center rounded-2xl bg-[rgb(var(--brand-secondary))] px-10 py-4 text-base font-bold text-[rgb(var(--brand-primary-dark))] transition hover:opacity-90"
-    >
-      Check availability →
-    </a>
   </div>
 </section>
