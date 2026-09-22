@@ -612,26 +612,5 @@
 				{/each}
 			</div>
 		</div>
-
-		<!-- Bottom CTA -->
-		<div class="mt-16 rounded-3xl bg-[rgb(var(--brand-primary-dark))] px-6 py-14 text-center text-white">
-			<p class="text-sm font-semibold uppercase tracking-[0.2em] text-[rgb(var(--brand-secondary))]">
-				Ready to book?
-			</p>
-			<h2 class="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">
-				Let's make your event unforgettable.
-			</h2>
-			<p class="mx-auto mt-4 max-w-xl text-base leading-7 text-white/70">
-				Not sure which package is right for you? Choose a category above, build your quote, and
-				send us your request — we'll follow up by email.
-			</p>
-			<a
-				href="#choose-package"
-				class="mt-8 inline-flex items-center justify-center gap-2 rounded-2xl bg-[rgb(var(--brand-secondary))] px-10 py-4 text-base font-bold text-[rgb(var(--brand-primary-dark))] shadow-lg transition hover:opacity-90 hover:scale-[1.02]"
-			>
-				Choose your package →
-			</a>
-		</div>
-
 	</div>
 </section>
