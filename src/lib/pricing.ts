@@ -24,14 +24,14 @@ export const weddingPackages: Package[] = [
 		taps: 4,
 		items: [
 			'Up to 4 hours of service',
-			'Full truck setup & breakdown included',
+			'Two licensed bartenders',
+			'Four tap beverages',
+			'Bottled wine/bubbly service',
+			'Full truck setup & breakdown',
 			'All tap equipment & dispensing hardware',
 			'Ice & cooling for kegs',
-			'Bar tools, towels & serving essentials',
-			'Basic bar setup with table + tap system',
-			'Four tap beverages',
-			'Bottled wine service',
-			'One licensed bartender'
+			'Bar tools, cleaning towels & serving essentials',
+			'Side bar setup for service'
 		]
 	},
 	{
@@ -44,13 +44,15 @@ export const weddingPackages: Package[] = [
 		highlight: true,
 		items: [
 			'Up to 6 hours of service',
-			'Full truck setup & breakdown included',
+			'Two licensed bartenders',
+			'Four tap beverages',
+			'One optional custom tap cocktail + garnish',
+			'Bottled wine/bubbly service',
+			'Full truck setup & breakdown',
 			'All tap equipment & dispensing hardware',
 			'Ice & cooling for kegs',
-			'Bar tools, towels & serving essentials',
-			'Four tap beverages',
-			'Bottled wine service',
-			'Two licensed bartenders'
+			'Bar tools, cleaning towels & serving essentials',
+			'Side bar setup for service'
 		]
 	},
 	{
@@ -62,16 +64,16 @@ export const weddingPackages: Package[] = [
 		taps: 4,
 		items: [
 			'Up to 8 hours of service',
-			'Full truck setup & breakdown included',
+			'Two licensed bartenders',
+			'Four tap beverages',
+			'Two optional custom tap cocktails + garnishes',
+			'Custom drink menu + styling touches',
+			'Bottled wine/bubbly service',
+			'Full truck setup & breakdown',
 			'All tap equipment & dispensing hardware',
 			'Ice & cooling for kegs',
-			'Bar tools, towels & serving essentials',
-			'Four tap beverages',
-			'Two optional tap cocktails + garnish',
-			'Full side bar setup',
-			'Bottled wine service',
-			'Custom drink menu + styling touches',
-			'Two licensed bartenders'
+			'Bar tools, cleaning towels & serving essentials',
+			'Side bar setup for service'
 		]
 	}
 ];
@@ -86,12 +88,13 @@ export const privatePackages: Package[] = [
 		taps: 2,
 		items: [
 			'Up to 2 hours of service',
-			'Full truck setup & breakdown included',
+			'One licensed bartender',
+			'Two tap beverages',
+			'Full truck setup & breakdown',
 			'All tap equipment & dispensing hardware',
 			'Ice & cooling for kegs',
-			'Bar tools, towels & serving essentials',
-			'Two tap beverages',
-			'One licensed bartender'
+			'Bar tools, cleaning towels & serving essentials',
+			'Side bar setup for service'
 		]
 	},
 	{
@@ -103,12 +106,13 @@ export const privatePackages: Package[] = [
 		taps: 4,
 		items: [
 			'Up to 3 hours of service',
-			'Full truck setup & breakdown included',
+			'One licensed bartender',
+			'Four tap beverages',
+			'Full truck setup & breakdown',
 			'All tap equipment & dispensing hardware',
 			'Ice & cooling for kegs',
-			'Bar tools, towels & serving essentials',
-			'Four tap beverages',
-			'One licensed bartender'
+			'Bar tools, cleaning towels & serving essentials',
+			'Side bar setup for service'
 		]
 	}
 ];

@@ -449,12 +449,12 @@
 											</select>
 										</div>
 									</div>
-
-									<label class="flex items-center gap-2 text-sm">
-										<input type="checkbox" bind:checked={calc[pkg.name].cocktail} class="h-4 w-4 rounded border-fg/30" />
-										Add a prebatched cocktail tap ({fmtMoney(COCKTAIL_RATE)})
-									</label>
-
+									{#if pkg.name !== 'Tap Truck Premium'}
+										<label class="flex items-center gap-2 text-sm">
+											<input type="checkbox" bind:checked={calc[pkg.name].cocktail} class="h-4 w-4 rounded border-fg/30" />
+											Add a prebatched cocktail tap ({fmtMoney(COCKTAIL_RATE)})
+										</label>
+									{/if}
 									<label class="flex items-center gap-2 text-sm">
 										<input type="checkbox" bind:checked={calc[pkg.name].ferry} class="h-4 w-4 rounded border-fg/30" />
 										Mainland event (ferry fee) ({fmtMoney(FERRY_RATE)} flat)
