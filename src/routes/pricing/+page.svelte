@@ -391,7 +391,7 @@
 											id="date-{pkg.name}"
 											type="date"
 											bind:value={calc[pkg.name].date}
-											class="mt-1 w-full rounded-xl max-w-full min-w-0 border border-fg/15 bg-white px-3 py-2 text-sm"
+											class="mt-1 block w-full max-width:100% appearance-none rounded-xl max-w-full min-w-0 border border-fg/15 bg-white px-3 py-2 text-sm"
 										/>
 										{#if calc[pkg.name].date}
 											<p class="mt-1 text-xs {isPeakDate(calc[pkg.name].date) ? 'font-semibold text-[rgb(var(--brand-accent))]' : 'text-fg/50'}">
