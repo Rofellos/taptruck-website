@@ -322,7 +322,7 @@
 					</h2>
 				</div>
 
-				<div class="grid gap-6 items-start {selected === 'wedding' ? 'xl:grid-cols-3' : 'sm:grid-cols-2 max-w-2xl mx-auto'}">
+				<div class="grid gap-6 items-start {selected === 'wedding' ? 'xl:grid-cols-3' : 'xl:grid-cols-2'}">
 					{#each packages as pkg}
 						<article class="relative flex min-w-0 flex-col self-start rounded-3xl border bg-white/75 p-4 sm:p-6 shadow-sm
 							{pkg.highlight ? 'border-[rgb(var(--brand-accent))] ring-1 ring-[rgb(var(--brand-accent))]/30' : 'border-fg/10'}"
