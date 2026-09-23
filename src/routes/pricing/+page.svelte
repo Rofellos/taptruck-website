@@ -232,7 +232,7 @@
 				Simple, transparent pricing
 			</h1>
 			<p class="mt-6 text-base leading-7 text-fg/75 sm:text-lg">
-				Select the package category that best matches your event, build your exact quote, and
+				Select the package category that best matches your event, build your quote, and
 				request to book — all in one place.
 			</p>
 			<p class="mt-4 text-sm leading-6 text-fg/55">
@@ -318,13 +318,13 @@
 			<div transition:slide={{ duration: 300 }} class="mt-12">
 				<div class="mb-8 text-center">
 					<h2 class="text-3xl font-bold tracking-tight sm:text-4xl">
-						{selected === 'wedding' ? 'Wedding Packages' : 'Private Event Packages'}
+						{selected === 'wedding' ? 'Large Event Packages' : 'Small Event Packages'}
 					</h2>
 				</div>
 
 				<div class="grid gap-6 items-start {selected === 'wedding' ? 'xl:grid-cols-3' : 'sm:grid-cols-2 max-w-2xl mx-auto'}">
 					{#each packages as pkg}
-						<article class="relative flex flex-col self-start rounded-3xl border bg-white/75 p-4 sm:p-6 shadow-sm
+						<article class="relative flex min-w-0 flex-col self-start rounded-3xl border bg-white/75 p-4 sm:p-6 shadow-sm
 							{pkg.highlight ? 'border-[rgb(var(--brand-accent))] ring-1 ring-[rgb(var(--brand-accent))]/30' : 'border-fg/10'}"
 						>
 
@@ -381,9 +381,9 @@
 							</button>
 
 							{#if calcOpen === pkg.name && calc[pkg.name]}
-								<div transition:slide={{ duration: 250 }} class="mt-4 space-y-4 rounded-2xl border border-fg/10 bg-fg/5 p-4">
+								<div transition:slide={{ duration: 250 }} class="mt-4 min-w-0 space-y-4 rounded-2xl border border-fg/10 bg-fg/5 p-4">
 
-									<div>
+									<div class="min-w-0">
 										<label class="text-xs font-semibold uppercase tracking-wide text-fg/60" for="date-{pkg.name}">
 											Event date
 										</label>
@@ -391,7 +391,7 @@
 											id="date-{pkg.name}"
 											type="date"
 											bind:value={calc[pkg.name].date}
-											class="mt-1 w-full rounded-xl border border-fg/15 bg-white px-3 py-2 text-sm"
+											class="mt-1 w-full rounded-xl max-w-full min-w-0 border border-fg/15 bg-white px-3 py-2 text-sm"
 										/>
 										{#if calc[pkg.name].date}
 											<p class="mt-1 text-xs {isPeakDate(calc[pkg.name].date) ? 'font-semibold text-[rgb(var(--brand-accent))]' : 'text-fg/50'}">
